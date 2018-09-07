@@ -1,7 +1,7 @@
 /*
 
     Template Author : pixelhint.com
-    Author Email    : contact@pixelhint.com
+    Author Email    : aboutus@pixelhint.com
     Template Name   : Magnetic
     
     
@@ -13,7 +13,7 @@
     - Header
     - Home/portfolio 
     - Inner page 
-    - Map/Contact page  
+    - Map/aboutus page
     - Tooltip 
     - Responsive code
   
@@ -60,7 +60,6 @@
     font-style: normal;
 
 }
-
 
 
 /*  General CSS*/
@@ -251,7 +250,7 @@ h5, h6          { font-weight: bolder }
     width: 40px;
     height: 40px;
     cursor: pointer;
-    background: url('../img/men_icons.png') no-repeat;
+    background: url('../img/logo1.ico') no-repeat;
 }
 
 #menu_icon{    
@@ -335,10 +334,10 @@ h5, h6          { font-weight: bolder }
     z-index: 77;
     color: #454545;
     font-family: "raleway-regular", arial;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: .5px;
-    border-bottom: 1px solid #bfbbbb;
-    border-top: 1px solid #bfbbbb;
+    border-bottom:0.8px solid #bfbbbb;
+    border-top: 0.8px solid #bfbbbb;
 }
 
 
@@ -472,7 +471,7 @@ h5, h6          { font-weight: bolder }
 
 
 
-/*  Contact page map  */
+/*  aboutus page map  */
 #map .map_adresse{
     font-family: 'raleway-regular', arial;
     font-size: 14px;

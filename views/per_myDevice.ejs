@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>我的设备 | WeHealth 大健康数据平台</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo1.ico">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="pixelhint.com">
+    <meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website  template"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<!--
+<script>
+function windowHeight() {
+    var de = document.documentElement;
+    return self.innerHeight||(de && de.clientHeight)||document.body.clientHeight;
+}
+window.onload=window.onresize=function(){
+    var wh=windowHeight();
+    document.getElementById("xt-left").style.height = document.getElementById("xt-right").style.height = (wh-document.getElementById("xt-top").offsetHeight)+"px";
+}
+</script>
+-->
+<body>
+    <header>
+        <div class="logo">
+            <a href="per_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+        </div><!-- end logo -->
+
+        <div id="menu_icon"></div>
+        <nav>
+            <ul>
+                <li><a href="/per_index">个人主页</a></li>
+                <li><a href="/per_personalInfo">账号信息</a></li>
+                <li><a href="/per_aboutus">关于我们</a></li>
+            </ul>
+        </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <div class="rights">
+            <p>Copyright © 2018 WeHealth.</p>
+            <p>WeHealth，大健康数据管理平台</p>
+        </div><!-- end rights -->
+    </div>
+    </header><!-- end header -->
+
+
+    <section class="main clearfix">
+
+        <section class="top">   
+            <div class="wrapper content_header clearfix">
+                <div class="work_nav">
+                    
+                    <ul class="btn clearfix">
+                        <li><a href="/per_visitorRecord" class="previous" data-title="来访记录"></a></li>
+                        <li><a href="/per_index" class="grid" data-title="个人主页"></a></li>
+                        <li><a href="/per_myOrder" class="next" data-title="订单管理"></a></li>
+                    </ul>                           
+                    
+                </div><!-- end work_nav -->
+                <h1 class="title">我的设备</h1>
+            </div>      
+        </section><!-- end top -->
+
+        <section class="wrapper">
+            <div class="xt-center">
+            <!--<div id="xt-left">
+                <div class="xt-logo"></div>
+                <div class="xt-menu">
+                <ul>
+                    <li><a href="#" class="hover"><em class="one"></em>基础信息</a></li>
+                </ul>
+                <div class="xt-menu-list"></div>
+                <ul>
+                    <li><a href="#"><em class="two"></em>系统设置</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"><em class="three"></em>报表数据</a></li>
+                </ul>
+                </div>
+            </div>-->
+            <!-- right -->
+            <div id="xt-center">
+                <div class="xt-input">
+                    <span>账号类型</span>
+
+                    <select class="int-tex t" >
+                        <option>历史设备</option>
+                        <option>附近设备</option>
+                    </select>
+
+                    <span>设备状态</span>
+                    <select class="int-text" >
+                        <option>可连接</option>
+                        <option>已连接</option>
+                        <option>未连接</option>
+                    </select>
+
+                    <input type="button" value="确 定" class="green-int" />
+                </div>
+                <div class="xt-table">
+                    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">
+                        <tr>
+                            <th>编号</th>
+                            <th>设备名称</th>
+                            <th>设备序列号</th>
+                            <th>设备类型</th>
+                            <th>设备状态</th>
+                            <th>最后连接时间</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr class="xt-bg">
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr class="xt-bg">
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr class="xt-bg">
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr class="xt-bg">
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr class="xt-bg">
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+                        <tr class="xt-bg">
+                            <td>1</td>
+                            <td>iWatch</td>
+                            <td>i6689sd005</td>
+                            <td>手表</td>
+                            <td>可连接</td>
+                            <td>昨天</td>
+                            <td><a href="#" class="green-xt">连接</a><a href="#" class="red-xt">删除</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="xt-fenye">
+                    <div class="xt-fenye-left">当前第 1 / 270 页,每页10条，共 2696条记录</div>
+                    <div class="xt-fenye-right">
+                        <a href="#">首页</a>
+                        <a href="#">上一步</a>
+                        <a href="#">下一步</a>
+                        <a href="#">尾页</a>
+                        <input type="text" name="text" /> 
+                        <a href="#" class="xt-link">跳转</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>
+
+</body>
+</html>

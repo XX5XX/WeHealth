@@ -11,7 +11,7 @@ $(document).ready(function(){
 
     
 
-    //Contact Page Map Centering
+    //aboutus Page Map Centering
     var hw = $('header').width() + 50;
     var mw = $('#map').width();
     var wh = $(window).height();

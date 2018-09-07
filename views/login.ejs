@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome | WeHealth</title>
+	<link rel="icon" type="image/png" sizes="16x16" href="images/logo1.ico">
+
+	<link rel="stylesheet" href="css2/style.css">
+	<link href="css2/popup-box.css" rel="stylesheet" type="text/css" media="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Sign In And Sign Up Forms  Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<script src="js/jquery.min.js"></script>
+	<script src=".././routes/login.js"></script>
+
+<script type="text/javascript">
+	function personalOn()
+	{
+		document.getElementById("org").style.display="none";
+		document.getElementById("per").style.display="";
+	}
+
+	function organizationOn()
+	{
+		document.getElementById("org").style.display="";
+		document.getElementById("per").style.display="none"
+
+	}
+	function doo() {
+        var name=document.getElementById("name").value;
+        var password=document.getElementById("password").value;
+        $.ajax({
+            type: 'post',
+            url: '/login',
+            data: {
+				name:name,
+				password:password
+            },
+            success: function (data) {
+                if (data==="fail2") {
+                    alert("请先注册！");
+                }else if(data==="fail"){
+                    alert("密码错误！")
+				} else if(data==="orga"){
+                    location.href='/org_index';
+				}else location.href='/per_index';
+            },
+            error: function () {
+                alert('错误！')
+            }
+
+        })
+    }
+	function agree1()
+	{
+		document.getElementById("accept1").disabled=false;
+	}
+
+    function agree2()
+    {
+        document.getElementById("accept2").disabled=false;
+    }
+    
+    function checkpw1() {
+	    var p1=document.getElementById("pw1").value;
+	    var p2=document.getElementById("pw2").value;
+	    if(p1!=p2)
+		{
+		    alert("两次密码输入不一致！")
+			return false;
+        }
+        else
+            return true;
+    }
+    function checkpw2() {
+        var p3=document.getElementById("pw3").value;
+        var p4=document.getElementById("pw4").value;
+        if(p3!=p4)
+        {
+            alert("两次密码输入不一致！")
+            return false;
+        }
+        else
+            return true;
+    }
+
+</script>
+
+<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/modernizr.custom.53451.js"></script> 
+<script>
+	$(document).ready(function() {
+		$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
+		
+	});
+</script>	
+
+</head>
+<body>
+	<p>
+		<br>
+		<div style="text-align: center">
+			<img src="images/WeHealth1.png" alt="WeHealth" height="80">
+		</div>
+	</p>
+	<div class="w3layouts">
+		<div class="signin-agile">
+			<h2>登录</h2>
+			<form  action="/login" method="post" >
+				<input type="text" id="name" name="name" class="name" placeholder="用户名" required="">
+				<input type="password" id="password" name="password" class="password" placeholder="密码" required="">
+				<ul>
+
+						<input type="checkbox" id="brand" value="">记住密码
+						<!--label for="brand"><span></span>记住密码</label-->
+
+				</ul>
+				<a href="#">忘记密码?</a><br>
+				<div class="clear"></div>
+				<input type="button" style="
+	background:#943e66;
+	padding:13px 0;
+	font-size:16px;
+	color:#fff;
+	cursor:pointer;
+	outline:none;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	width:100%;
+	border:none;
+	margin-top:25px;
+	border-radius:25px;
+"  value="登录" onclick="return doo()">
+			</form>
+
+
+		</div>
+		<div class="signup-agileinfo" >
+			<div id="joinus">
+				<h3>加入我们</h3>
+				<br>
+				<br>
+				<p>WeHealth是一个基于区块链网络构架的健康数据平台。在这里，个人用户与医疗服务机构均能体验数据共享带来的安全无忧的便利生活，在大数据时代享受更科学、更实际的医疗健康服务。</p>
+			</div>
+
+			<div class="more">
+				<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog" style="float: right;">点击注册</a>				
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="footer-w3l">
+		<p class="agileinfo"> Copyright © 2018 WeHealth.</p>
+	</div>
+	<div class="pop-up"> 
+		<div id="small-dialog" class="mfp-hide book-form">
+			<h3>注册 </h3>
+
+				<input type="radio" name="radio" id="personal" checked onclick="personalOn()">个人用户
+				<input type="radio" name="radio" id="organization" onclick=" organizationOn()">机构用户
+
+				<br>
+				<br>
+
+				<div id="per">
+					<form action="/per_reg" method="post" onsubmit="return checkpw1()">
+					<input type="radio" name="sex" value="male" id="male">男
+					<input type="radio" name="sex" value="female" id="female" >女
+					<br>
+					<br>
+					<label for="meeting">出生日期：</label><input id="birth" type="date" value="1900-01-01"/>
+					<br>
+					<br>
+					<input type="text" name="Name" placeholder="用户名" required=""/>
+					<input type="password" name="Password" class="password" id="pw1" placeholder="密码" required=""/>
+					<input type="password" name="Password" class="password" id="pw2" placeholder="确认密码" required=""/>	<br>
+						<input id="radio" type="checkbox" onclick="agree1()">我接受WeHealth获取我的健康数据。
+						<input id="accept1" type="submit" disabled="disabled" value="点击注册" >
+					</form>
+				</div>
+
+				<div id="org" style="display: none;">
+					<form action="/org_reg" method="post" enctype="multipart/form-data" onsubmit="return checkpw2()">
+					<input type="text" name="Name" placeholder="机构名称" required=""/>
+					<input type="password" name="Password" class="password" id="pw3" placeholder="密码" required=""/>
+					<input type="password" name="Password" class="password" id="pw4" placeholder="确认密码" required=""/>	<br>
+                    上传凭证： <input type="file" name="photo"  />
+						<br>
+						<br>
+						<input id="auradio" type="checkbox" onclick="agree2()">我接受WeHealth获取我的健康数据。
+						<input id="accept2" type="submit" disabled="disabled" value="点击注册" >
+					</form>
+				</div>
+
+				<br>
+			</form>
+		</div>
+	</div>
+	</body>
+		</html>

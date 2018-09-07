@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router({});
-let util = require('./../util/util');
+let base = require('../dao/db/query');
+let window = require('window');
 
 router.get('/', function(req, res, next) {
     res.render('login', { title: '登录' });
@@ -8,32 +9,36 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
     // 1. 获取数据
-    let userName = req.body.userName;
-    let loginPwd = req.body.loginPwd;
-
-    // 2. 处理数据
-    // 2.1 生成用户注册对象
-    let loginUser = {
-        userName: userName,
-        loginPwd: loginPwd
-    };
-
-    // console.log(regUser);
-
-    // 2.2 验证用户是否已经注册
-    let user = util.isReg(loginUser, util.users);
-    if(null !== user && undefined !== user){ // 匹配到用户
-        // console.log(user);
-        // 验证密码
-        if(user.loginPwd === loginPwd){
-            res.redirect('/chat');
-        }else {
-            res.send("密码错误！");
+    //console.log(req);
+    let Name = req.body.name;
+    let loginPwd = req.body.password;
+    res.cookie('Name',Name);
+    sql="select sex from useInfo where username = "+"'"+Name+"'";
+    base.query(sql,function (err,resu) {
+        if (resu === undefined) {
+            sql = "select password from orga where organame = " + "'" + Name + "'";
+            base.query(sql, function (err, rs) {
+                if (null === rs || undefined === rs) { // 没有注册
+                    res.send("fail2");
+                } else if (rs.password === loginPwd) {
+                    res.send("orga");
+                } else {
+                    res.send("fail");
+                }
+            });
+        } else {
+            sql = "select password from useInfo where username = " + "'" + Name + "'";
+            base.query(sql, function (err, rs) {
+                if (null === rs || undefined === rs) { // 没有注册
+                    res.send("fail2");
+                } else if (rs.password === loginPwd) {
+                    res.send("user")
+                } else {
+                    res.send("fail");
+                }
+            });
         }
-    }else {
-        res.send("当前的用户不存在");
-    }
-
+    });
 });
 
 module.exports = router;
