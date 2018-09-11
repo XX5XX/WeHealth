@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>历史记录 | WeHealth 大健康数据平台</title>
+	<link rel="icon" type="image/png" sizes="16x16" href="img/logo1.ico">
+    <meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website  template"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+</head>
+<body>
+
+	<header>
+		<div class="logo">
+			<a href="/per_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+		</div><!-- end logo -->
+
+		<div id="menu_icon"></div>
+		<nav>
+			<ul>
+				<li><a href="/per_index">个人主页</a></li>
+				<li><a href="/per_personalInfo">账号信息</a></li>
+				<li><a href="/aboutus">关于我们</a></li>
+			</ul>
+		</nav><!-- end navigation menu -->
+
+		<div class="footer clearfix">
+			<div class="rights">
+				<p>Copyright © 2018 WeHealth.</p>
+				<p>WeHealth，大健康数据管理平台</p>
+			</div><!-- end rights -->
+		</div ><!-- end footer -->
+	</header><!-- end header -->
+
+	<section class="main clearfix">
+
+		<section class="top">	
+			<div class="wrapper content_header clearfix">
+				<div class="work_nav">
+							
+					<ul class="btn clearfix">
+						<li><a href="/per_index" class="previous" data-title="Previous"></a></li>
+						<li><a href="/per_index.html" class="grid" data-title="Portfolio"></a></li>
+						<li><a href="/per_hcStore" class="next" data-title="Next"></a></li>
+					</ul>
+					
+				</div><!-- end work_nav -->
+				<h1 class="title">历史数据-睡眠质量</h1>
+			</div>		
+		</section><!-- end top -->
+
+		<section class="wrapper">
+			<div class="content">
+
+			    <div class="work_nav">
+							
+					<ul class="btn clearfix">
+						<li><a href="/per_historyData_bloodPressure" class="previous" data-title="Previous"></a></li>
+						<li><a href="/per_historyData_heartRate" class="next" data-title="Next"></a></li>
+					</ul>
+					
+				</div><!-- end work_nav -->
+
+				<div class="container-fluid">
+			      	<div class="row">
+			        	<canvas class="my-4 w-100" id="myChart" width="260" height="60"></canvas>
+				  	</div>
+				</div>
+				
+			    <!-- Graphs -->
+			    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js">
+			    </script>
+
+				<script>
+                    function drawSQGraph() {
+                        var jsonData = $.ajax({
+                            type: 'post',
+                            url: '/per_historyData_sleepQuality',
+                            dataType: 'json',
+                        }).done(function (results) {
+
+                            var temp = [];
+                            var total = [];
+                            var deep = [];
+                            var light = [];
+                            for (var bpData in results)//bpData:数据库血压数据
+                            {
+                                temp.push(results[bpData].sleepQuality);
+                                var part = temp[bpData].split("/");
+                                total.push(parseFloat(part[0]));
+                                deep.push(parseFloat(part[1]));
+                                light.push(parseFloat(part[2]));
+                            }
+
+                            var line = {
+                                labels: ["六天前", "五天前", "四天前", "三天前", "两天前", "一天前", "今天"],
+                                datasets: [{
+                                        data: total,
+                                        lineTension: 0,
+                                        backgroundColor: 'transparent',
+                                        borderColor: '#007bff',
+                                        borderWidth: 2,
+                                        pointBackgroundColor: '#007bff'
+                                    },
+                                    {
+                                        data: deep,
+                                        lineTension: 0,
+                                        backgroundColor: 'transparent',
+                                        borderColor: '#007bff',
+                                        borderWidth: 2,
+                                        pointBackgroundColor: '#007bff'
+                                    },
+                                    {
+                                        data: light,
+                                        lineTension: 0,
+                                        backgroundColor: 'transparent',
+                                        borderColor: '#007bff',
+                                        borderWidth: 2,
+                                        pointBackgroundColor: '#007bff'
+                                    }]
+                            };
+
+                            var ctx = document.getElementById("myChart");
+                            var myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: line,
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: false
+                                            }
+                                        }]
+                                    },
+                                    legend: {
+                                        display: false,
+                                    }
+                                }
+                            });
+                        });
+                    }
+                    drawSQGraph();
+				</script>
+
+			    <!--<script>
+			      	var ctx = document.getElementById("myChart");
+			      	var myChart = new Chart(ctx, {
+			        	type: 'line',
+			        	data: {
+			          	labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			          	datasets: [{
+			            	data: [120, 115, 118, 112, 122, 118, 115],
+			            	lineTension: 0,
+			            	backgroundColor: 'transparent',
+			            	borderColor: '#007bff',
+			            	borderWidth: 2,
+			            	pointBackgroundColor: '#007bff'
+			          	}]
+			        },
+			        options: {
+			          scales: {
+			            yAxes: [{
+			              ticks: {
+			                beginAtZero: false
+			              }
+			            }]
+			          },
+			          legend: {
+			            display: false,
+			          }
+			        }
+			      });
+			    </script>-->
+
+			</div><!-- end content -->
+		</section>
+	</section><!-- end main -->
+
+</body>
+</html>

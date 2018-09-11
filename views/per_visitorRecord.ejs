@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>来访记录 | WeHealth 大健康数据平台</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo1.ico">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="pixelhint.com">
@@ -12,100 +13,58 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-
 </head>
 
 <body>
+<header>
+    <div class="logo">
+        <a href="/per_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+    </div><!-- end logo -->
 
-	<header>
-		<div class="logo">
-			<a href="per_index.html"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
-		</div><!-- end logo -->
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            <li><a href="/per_index"><font size="3">个人主页</font><br/></a></li>
+            <li><a href="/per_personalInfo"><font size="3">账号信息</font><br/></a></li>
+            <li><a href="/per_aboutus"><font size="3">关于我们</font><br/></a></li>
+        </ul>
+    </nav><!-- end navigation menu -->
 
-		<div id="menu_icon"></div>
-		<nav>
-			<ul>
-				<li><a href="/per_index"><font size="3">个人主页</font><br/></a></li>
-				<li><a href="/per_personalInfo"><font size="3">账号信息</font><br/></a></li>
-				<li><a href="/per_aboutus"><font size="3">关于我们</font><br/></a></li>
-			</ul>
-		</nav><!-- end navigation menu -->
+    <div class="footer clearfix">
+        <div class="rights">
+            <p>Copyright © 2018 WeHealth.</p>
+            <p>WeHealth，大健康数据管理平台</p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
 
-		<div class="footer clearfix">
-			<div class="rights">
-				<p>Copyright © 2018 WeHealth.</p>
-				<p>WeHealth，大健康数据管理平台</p>
-			</div><!-- end rights -->
-		</div ><!-- end footer -->
-	</header><!-- end header -->
+<section class="main clearfix">
 
-	<section class="main clearfix">
+    <section class="top">
+        <div class="wrapper content_header clearfix">
+            <div class="work_nav">
 
-		<section class="top">	 
-			<div class="wrapper content_header clearfix">
-				<div class="work_nav">
-					
-					<ul class="btn clearfix">
-						<li><a href="/per_hcStore" class="previous" data-title="Previous"></a></li>
-						<li><a href="/per_index" class="grid" data-title="Portfolio"></a></li>
-						<li><a href="/per_myDevice" class="next" data-title="Next"></a></li>
-					</ul>							
-					
-				</div><!-- end work_nav -->
-				<h1 class="title">来访记录</h1>
-			</div>		
-		</section><!-- end top -->
-<section class="wrapper">
-            <div class="xt-center">
+                <ul class="btn clearfix">
+                    <li><a href="/per_hcStore" class="previous" data-title="Previous"></a></li>
+                    <li><a href="/per_index" class="grid" data-title="Portfolio"></a></li>
+                    <li><a href="/per_myDevice" class="next" data-title="Next"></a></li>
+                </ul>
+
+            </div><!-- end work_nav -->
+            <h1 class="title">来访记录</h1>
+        </div>
+    </section><!-- end top -->
+
+    <div id="visitorList">
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <section class="wrapper">
+        <div class="xt-center">
             <!-- right -->
             <div id="xt-center">
-                
                 <div class="xt-table">
-                <table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">
-                        <tr>
-                        	<th>编号</th>
-	                        <th>来访机构id</th>
-	                        <th>来访机构名称</th>
-	                        <th>来访时间</th>
-	                        <th>奖励金</th>
-                        </tr>
-                        <tr>
-                            <td>0005</td>
-                            <td>100223</td>
-                            <td>南京同仁医院</td>
-                            <td>2018-09-04</td>
-                            <td>1.00</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>0004</td>
-                            <td>100210</td>
-                            <td>南京东方颐年养老服务有限公司</td>
-                            <td>2018-09-02</td>
-                            <td>1.00</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>0003</td>
-                            <td>100203</td>
-                            <td>南京市第二医院</td>
-                            <td>2018-08-31</td>
-                            <td>1.00</td>
-                        </tr>
-                        <tr>
-                            <td>0002</td>
-                            <td>100223</td>
-                            <td>南京同仁医院</td>
-                            <td>2018-08-31</td>
-                            <td>1.00</td>
-                        </tr>
-                        <tr>
-                            <td>0001</td>
-                            <td>100008</td>
-                            <td>江苏省人民医院</td>
-                            <td>2018-08-27</td>
-                            <td>1.00</td>
-                        </tr>
 
-                    </table>
                 </div>
                 <div class="xt-fenye">
                     <div class="xt-fenye-left">当前第 1 / 1 页,每页10条，共 5条记录</div>
@@ -114,15 +73,66 @@
                         <a href="#">上一步</a>
                         <a href="#">下一步</a>
                         <a href="#">尾页</a>
-                        <input type="text" name="text" /> 
+                        <input type="text" name="text" />
                         <a href="#" class="xt-link">跳转</a>
                     </div>
                 </div>
 
+                <table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">
+
+                    <!--<table id="mm" border="1" >-->
+
+                    <tbody id="visitorList"></tbody>
+                </table>
+
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+                <script>
+                    function perVisitorTable() {
+                        $.ajax({
+                            type: 'post',
+                            url: '/per_visitorRecord',
+                            success: function (jsonData) {
+                                var str = '<table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">';
+                                str += '<tr height="25px" class="xt-table">'
+                                str += '<th>' + '用户名' + '</th>';
+                                str += '<th>' + '性别' + '</th>';
+                                str += '<th>' + '身高' + '</th>';
+                                str += '<th>' + '体重' + '</th>';
+                                str += '<th>' + '心率' + '</th>';
+                                str += '<th>' + '血压' + '</th>';
+                                str += '<th>' + '睡眠质量' + '</th>';
+                                str += '<th>' + '被访次数' + '</th>';
+                                str += '</tr>'
+                                for (var j in jsonData) {
+                                    var obj = jsonData[j];
+                                    str += '<tr height="25px" class="xt-table" align="center">'
+                                    str += '<td>' + obj.userName + '</td>';
+                                    str += '<td>' + obj.sex + '</td>';
+                                    str += '<td>' + obj.height + '</td>';
+                                    str += '<td>' + obj.weight + '</td>';
+                                    str += '<td>' + obj.heartRate + '</td>';
+                                    str += '<td>' + obj.bloodPressure + '</td>';
+                                    str += '<td>' + obj.sleepQuality + '</td>';
+                                    str += '<td>' + obj.counts + '</td>';
+                                    str += '</tr>'
+                                }
+                                str += '</table>';
+                                $('#visitorList').html(str);
+                            },
+                            error: function () {
+                                alert('错误！')
+                            }
+
+                        })
+                    }
+                    perVisitorTable();
+                </script>
+
             </div>
-            </div>
-        </section>
-	</section><!-- end main -->
-	
+        </div>
+    </section>
+</section><!-- end main -->
+
 </body>
 </html>

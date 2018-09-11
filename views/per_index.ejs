@@ -11,12 +11,51 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+    function doo() {
+    $.ajax({
+    type: 'post',
+    url: '/per_index',
+    success: function (data) {
+		document.getElementById("name").value=data;
+    },
+    error: function () {
+    alert('错误！')
+    }
+    })
+    }
+    function insert() {
+        var name = document.getElementById("name").value;
+        var heartRate =document.getElementById("heartRate").value;
+        var bloodPressure =document.getElementById("bloodPressure").value;
+        var sleepQuality=document.getElementById("sleepQuality").value;
+        $.ajax({
+            type: 'post',
+            url: '/insertData',
+			data:{
+                name:name,
+                heartRate:heartRate,
+                bloodPressure:bloodPressure,
+                sleepQuality:sleepQuality
+			},
+            success: function (data) {
+                if(data){
+                    alert("健康数据上传成功！")
+				}
+            },
+            error: function () {
+                alert('错误！')
+            }
+        })
+    }
+    doo();
+</script>
 </head>
 <body>
 
 	<header>
 		<div class="logo">
-			<a href="per_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/per_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
@@ -42,21 +81,42 @@
 		<div style="text-align: center;margin: 15px">
 			<img src="img/portrait.png" alt="" height=80 >
 			<h1 style="font-size: 16px;line-height: 18px">
-				Peter Pan
+                <h4 align="center" ><input type="text" style="border:none;font-size:18px;background-color:transparent;font-weight: 800" size="3" id="name" value="" readonly></h4>
 				<br>
 				<br>
+                <!--<td id="name" value="" ></td>-->
 				—实时数据监控—<br>
-				心率：<br>
-				血压：<br>
-				睡眠：
+				<br>
+				<br>
+                <h4 align="center">心跳：<input type="text" style="border:none;font-size:18px" id="heartRate" value="" ></h4>
+				<br>
+                <h4 align="center">血压：<input type="text" style="border:none;font-size:18px" id="bloodPressure" value="" ></h4>
+				<br>
+                <h4 align="center">睡眠：<input type="text" style="border:none;font-size:18px" id="sleepQuality" value="" ></h4>
+				<br>
+				<input type="button" value="提交" style="font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid #3b5998;
+    padding: 10px 40px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 1px;
+    background: #3b5998;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;" onclick="insert()">
 			</h1>
 			
 		</div>
 	</div>
 
 	<div class="work">
-		<a href="/per_historyData">
-			<img src="img/history1.png" class="media" alt=""/>
+		<a href="/per_historyData_bloodPressure">
+			<img src="img/history4.png" class="media" alt=""/>
 			<div class="caption">
 				<div class="work_title">
 					<h1>查看您相关设备中的历史健康数据。</h1>
@@ -67,10 +127,10 @@
 
 	<div class="work">
 		<a href="/per_hcStore">
-			<img src="img/shop2.png" class="media" alt=""/>
+			<img src="img/shop4.png" class="media" alt=""/>
 			<div class="caption">
 				<div class="work_title">
-					<h1>在HC商店中购买专属的健康医疗服务。</h1>
+					<h1>在Health Coin商店中购买专属的健康医疗服务。</h1>
 				</div>
 			</div>
 		</a>
@@ -78,7 +138,7 @@
 
 	<div class="work">
 		<a href="/per_visitorRecord">
-			<img src="img/visitorrecord1.png" class="media" alt=""/>
+			<img src="img/visitorrecord4.png" class="media" alt=""/>
 			<div class="caption">
 				<div class="work_title">
 					<h1>查看已获取您健康数据的医疗机构。</h1>
@@ -89,7 +149,7 @@
 
 	<div class="work">
 		<a href="/per_myDevice">
-			<img src="img/mydevice2.png" class="media" alt=""/>
+			<img src="img/mydevice4.png" class="media" alt=""/>
 			<div class="caption">
 				<div class="work_title">
 					<h1>查看与我的账户连接的设备。</h1>
@@ -100,7 +160,7 @@
 
 	<div class="work">
 		<a href="/per_myOrder">
-			<img src="img/mymoney1.png" class="media" alt=""/>
+			<img src="img/mymoney4.png" class="media" alt=""/>
 			<div class="caption">
 				<div class="work_title">
 					<h1>查看我已购买的医疗服务。</h1>

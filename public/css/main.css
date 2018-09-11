@@ -616,3 +616,60 @@ h5, h6          { font-weight: bolder }
         width: 100%;
     }
 }
+
+.but1 a {
+
+    color: white;
+    border: 1px solid #f64662;
+    padding: 10px 0 0 0;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 5px;
+    background: #f64662;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -o-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -ms-transition:0.5s all;
+    height: 35px;
+    width: 300px;
+    text-align: center;
+}
+.but1 a:hover {
+    background: #dd356e;
+    border: 1px solid #dd356e;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -o-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+
+.but2 a {
+    color: white;
+    border: 1px solid #3b5998;
+    padding: 10px 0 0 0;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 5px;
+    background: #3b5998;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -o-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -ms-transition:0.5s all;
+    height: 35px;
+    width: 300px;
+    text-align: center;
+}
+.but2 a:hover {
+    background: #1f3c7b;
+    border: 1px solid #1f3c7b;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -o-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -ms-transition:0.5s all;
+}

@@ -22,7 +22,7 @@
 	<!--<link rel='stylesheet' type='text/css' href="css/style.css" />
 	 Custom Theme files -->
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	</script>
+	</head>
 
 	<link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
@@ -31,11 +31,11 @@
 
 	<header>
 		<div class="logo">
-			<a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/org_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
-		<nav>
+		<!--<nav>
 			<ul>
 				<h4>&nbsp</h4>
 				<hr>
@@ -47,8 +47,14 @@
 				<li><a href="#"><p style="font-family:raleway-regular, arial;color:#454545;size:10px;letter-spacing: 1px">关于我们</p></a></li>
 			</ul>
 		</nav>
-		<!-- end navigation menu -->
-
+		 end navigation menu -->
+         <nav>
+			<ul>
+				<li><a href="/org_index">主页</a></li>
+				<li><a href="/org_organizationInfo">账号信息</a></li>
+				<li><a href="/org_aboutus">关于我们</a></li>
+			</ul>
+		</nav><!-- end navigation menu -->
 		<div class="footer clearfix">
 			<div class="rights">
 				<p>Copyright © 2018 WeHealth.</p>
@@ -66,9 +72,9 @@
 				<div class="work_nav">
 					
 					<ul class="btn clearfix">
-						<li><a href="org_downloadData.html" class="previous" data-title="数据获取"></a></li>
-						<li><a href="org_index.ejs" class="grid" data-title="主页"></a></li>
-						<li><a href="org_transactionRecord.ejs" class="next" data-title="交易记录"></a></li>
+						<li><a href="/org_downloadData" class="previous" data-title="数据获取"></a></li>
+						<li><a href="/org_index" class="grid" data-title="主页"></a></li>
+						<li><a href="/org_transactionRecord" class="next" data-title="交易记录"></a></li>
 					</ul>
 					
 				</div><!-- end work_nav -->
@@ -77,73 +83,92 @@
 		</section><!-- end top -->
 
 		<section class="wrapper">
-			<div class="xt-center">
-				<div id="xt-center">
-				    <div class="Product_top">
+			
+				    
 				    	<div class="row content">
 			         		<ul class="product_img">
-			         			<li class="product_left"><img src="img/pic8.jpg" class="img-responsive" alt=""/></li>
+			         			<li class="product_left"><img src="img/家庭医生.jpg" class="img-responsive" alt=""/></li>
 				         		<li class="product_right">
-					         		<h3>Date Added: Wed 25 June, 2014</h3>
-					         		<h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>
-					         		<span class="model"><strong>Model : </strong>Model6</span><br>
-					         		<span class="model"><strong>Manufacturer : </strong>Example1</span>
-					         		<div class="product_price">Price:
-									  	<span class="actual">$12.00</span>
-									</div>
-									<div class="but1">
-							          	<a href="#">Buy Now</a>
+					         		<div class="but1">
+					         			<h4>家庭医生
+							          	<a href="#" style="color: white; font-size: 12px;height:30px;width:90px;float:right">修改商品信息</a>
+							          </h4>
 							        </div>
+					         		<h3>发布时间：2018.1.1</a></h3>
+					         		<span class="model">有效期: 2018.1.1-2019.1.1</span><br>
+					         		<span class="model">咨询电话: 025-52090000</span>
+					         		<br><br>
+					         		<div class="product_price"><strong>价格:</strong>
+									  	<span class="actual">100 Health Coins</span>
+									</div>
+									<br>
+									<div class="but2">
+									<h3>销量：21
+									
+							          	<a href="#" style="color: white; font-size: 12px">管理我的订单</a>
+							        </div></h3>	
 				         		</li>
 					         	<div class="clearfix"> </div>
-					            <h5 class="detail">Details:</h5>
-					            <p class="detail_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie<a href="#">...More Info</a></p>
+					            <h5 class="detail">详情:</h5>
+					            <p class="detail_desc">通过预约家庭医生服务，用户将获得专家医生一对一上门问诊服务。您可通过选择您需要问诊的详细病情和身体状况匹配精准的医生。问诊结束后，医生将对您的情况额外做为期一周的跟踪和咨询，有任何问题您都可以与他进行沟通，我们将  ...<a href="#">更多内容</a></p>
 			         		</ul>
+
 					        <ul class="product_img">
-					         	<li class="product_left"><img src="img/pic7.jpg" class="img-responsive" alt=""/>
-					         		
-					         	</li>
-					         	<li class="product_right">
-					         		<h3>Date Added: Wed 25 June, 2014</h3>
-					         		<h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>
-					         		<span class="model"><strong>Model : </strong>Model6</span><br>
-					         		<span class="model"><strong>Manufacturer : </strong>Example1</span>
-					         		<div class="product_price">Price:
-									  <span class="actual">$12.00</span>
-									</div>
-									<div class="but1">
-							          <a href="#">Buy Now</a>
+					         	<li class="product_left"><img src="img/儿童健康咨询.jpg" class="img-responsive" alt=""/></li>
+				         		<li class="product_right">
+					         		<div class="but1">
+					         			<h4>儿童健康咨询
+							          	<a href="#" style="color: white; font-size: 12px">修改商品信息</a>
+							          </h4>
 							        </div>
-					         	</li>
-					         	<div class="clearfix"> </div>
-					            <h5 class="detail">Details:</h5>
-					            <p class="detail_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie<a href="#">...More Info</a></p>
-					        </ul>
-					        <ul class="product_img">
-					         	<li class="product_left"><img src="img/pic9.jpg" class="img-responsive" alt=""/>
-					         		
-					         	</li>
-					         	<li class="product_right">
-					         		<h3>Date Added: Wed 25 June, 2014</h3>
-					         		<h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>
-					         		<span class="model"><strong>Model : </strong>Model6</span><br>
-					         		<span class="model"><strong>Manufacturer : </strong>Example1</span>
-					         		<div class="product_price">Price:
-									  <span class="actual">$12.00</span>
+					         		<h3>发布时间：2018.6.1</a></h3>
+					         		<span class="model">有效期: 2018.6.1-2019.1.1</span><br>
+					         		<span class="model">咨询电话: 025-52090000</span>
+					         		<br><br>
+					         		<div class="product_price"><strong>价格:</strong>
+									  	<span class="actual">75 Health Coins</span>
 									</div>
-									<div class="but1">
-							          <a href="#">Buy Now</a>
-							        </div>
-					         	</li>
+									<br>
+									<div class="but2">
+									<h3>销量：101
+									
+							          	<a href="#" style="color: white; font-size: 12px">管理我的订单</a>
+							        </div></h3>	
+				         		</li>
 					         	<div class="clearfix"> </div>
-					            <h5 class="detail">Details:</h5>
-					            <p class="detail_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie<a href="#">...More Info</a></p>
+					            <h5 class="detail">详情:</h5>
+					            <p class="detail_desc">预约前请至少提前一周致电预约，确保能够为您提供更好的服务。本院的儿科门诊将有经验丰富的医生为您的孩子提供全面的身体检查，将根据您孩子的健康状况给出相应的建议，并为您提供后续一周的健康跟踪和复诊的服务。如有进一步治疗的情况将  ...<a href="#">更多内容</a></p>
 					        </ul>
 
+					        <ul class="product_img">
+					         	<li class="product_left"><img src="img/口腔护理.jpg" class="img-responsive" alt=""/></li>
+				         		<li class="product_right">
+					         		<div class="but1">
+					         			<h4>口腔护理
+							          	<a href="#" style="color: white; font-size: 12px">修改商品信息</a>
+							          </h4>
+							        </div>
+					         		<h3>发布时间：2018.1.1</a></h3>
+					         		<span class="model">有效期: 2018.1.1-2019.1.1</span><br>
+					         		<span class="model">咨询电话: 025-52090000</span>
+					         		<br><br>
+					         		<div class="product_price"><strong>价格:</strong>
+									  	<span class="actual">200 Health Coins</span>
+									</div>
+									<br>
+									<div class="but2">
+									<h3>销量：312
+									
+							          	<a href="#" style="color: white; font-size: 12px">管理我的订单</a>
+							        </div></h3>	
+				         		</li>
+					         	<div class="clearfix"> </div>
+					            <h5 class="detail">详情:</h5>
+					            <p class="detail_desc">预约前请至少提前一周致电预约，确保能够为您提供更好的服务。我们将根据您的情况为您安排最适合您的医生。我们为您提供口腔清洁、牙齿健康检查和蛀牙状况修复。如有其它进一步的治疗，将根据问诊医生给出的建议方案收取额外的实际费用，所  ...<a href="#">更多内容</a></p>
+
 			 			</div>
-					</div>
-				</div>
-			</div>
+					
+		
 		</section>
 	</section>
 	

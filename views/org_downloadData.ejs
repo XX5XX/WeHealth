@@ -24,7 +24,44 @@
 	<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
-</head>
+	<style type="text/css">
+
+		#container{overflow: hidden;}/* 清除浮动 */
+		#container div{width:200px;height:100px;}
+
+		.box1{float: left;}
+		.box2{float: left;}
+
+	</style>
+
+	<script type="text/javascript">
+		function handleData() {
+		    var sex=document.getElementById("sex").value;
+		    var hr=document.getElementById("hr").checked;
+		    var bp=document.getElementById("bp").checked;
+		    var sq=document.getElementById("sq").checked;
+		    var amount=document.getElementById("amount").value;
+            $.ajax({
+                type: 'post',
+                url: '/org_downloadData',
+				data:{
+                    sex:sex,
+                    hr:hr,
+					bp:bp,
+					sq:sq,
+					amount:amount
+				},
+                success: function (data) {
+                    document.getElementById("download").href="data/"+data;
+                },
+                error: function () {
+                    alert('错误!!!!!!')
+                }
+            })
+        }
+        </script>
+		</head>
+
 <body>
 
 	<header>
@@ -35,9 +72,9 @@
 		<div id="menu_icon"></div>
 		<nav>
 			<ul>
-				<li><a href="org_index.ejs">主页</a></li>
-				<li><a href="org_organizationalInfo.ejs">账号信息</a></li>
-				<li><a href="org_aboutus.html">关于我们</a></li>
+				<li><a href="/org_index">主页</a></li>
+				<li><a href="/org_organizationInfo">账号信息</a></li>
+				<li><a href="/org_aboutus">关于我们</a></li>
 			</ul>
 		</nav><!-- end navigation menu -->
 
@@ -74,55 +111,52 @@
 		        </div>
 
 		        <div class="widget-content nopadding">
-		          <form action="#" method="get" class="form-horizontal">
-		            <div class="control-group">
-		              <label class="control-label">性别 :</label>
-		              <div class="controls">
-		                <input type="radio" name="gender" value="1">男
-		                <input type="radio" name="gender" value="1">女
-		              </div>
+		        <!-- <form action="/org_downloadData" method="post" class="form-horizontal" onsubmit="return handleData()">-->
+		            <div class="control-group" style="text-indent:2em">
+						<br>
+		                <label class="box1">性别 :</label>
+		                <div class="box2">
+		                	<input type="radio" name="gender" value="男" id="sex" >男
+		                	<input type="radio" name="gender" value="女" id="sex" >女
+		                </div>
 		            </div>
-		            <div class="control-group">
-		              <label class="control-label">年龄 :</label>
-		              <div class="controls">
-		                <input type="text" class="span11" placeholder="Upper limit" />
-		                <input type="text" class="span11" placeholder="Lower limit" />
-		              </div>
-		            </div>
-		            <div class="control-group">
-		              <label class="control-label">心率 :</label>
-		              <div class="controls">
-		              	<input type="radio" name="radio" value="1">获取心率数据
-		              </div>
-		            </div>
-		            <div class="control-group">
-		              <label class="control-label">血压 :</label>
-		              <div class="controls">
-		                <input type="radio" name="radio" value="1">获取血压数据
-		              </div>
-		            </div>
-		            <div class="control-group">
-		              	<label class="control-label">睡眠 :</label>
-		              	<div class="controls">
-		                	<input type="radio" name="radio" value="1">获取睡眠数据
-		            	</div>
-		            </div>
-		            <div class="control-group">
-		              	<label class="control-label">其他 :</label>
-		              	<div class="controls">
-		                	<input type="radio" name="radio" value="1">获取机构详细数据
+					<br>
+		            <div class="control-group" style="text-indent:2em">
+						<br>
+		              	<label class="box1">心率 :</label>
+		              	<div class="box2">
+		              		<input type="checkbox" name="radio1" id="hr">获取心率数据
 		              	</div>
 		            </div>
-		            <div class="control-group">
-		              	<label class="control-label">总数目 :</label>
-		              	<div class="controls">
-		                	<input type="text" class="span11" placeholder="Set the amount of data" />
+					<br>
+		            <div class="control-group" style="text-indent:2em">
+						<br>
+		              	<label class="box1">血压 :</label>
+		              	<div class="box2">
+		                	<input type="checkbox" name="radio2" id="bp">获取血压数据
+		              	</div>
+		            </div>
+					<br>
+		            <div class="control-group" style="text-indent:2em">
+						<br>
+		              	<label class="box1">睡眠 :</label>
+		              	<div class="box2">
+		                	<input type="checkbox" name="radio3" id="sq">获取睡眠数据
+		            	</div>
+		            </div>
+					<br>
+		            <div class="control-group" style="text-indent:2em">
+						<br>
+		              	<label class="box1">总数目 :</label>
+		              	<div class="box2">
+		                	<input type="text" class="span11" id="amount" value="" placeholder="Set the amount of data" />
 		            	</div>
 		            </div>
 		            <div class="form-actions">
-		            	<button type="submit" class="btn btn-success">确认获取</button>
+		            	<input type="button" class="btn btn-success" value="确认搜索范围" onclick="handleData()">
+						<a href="?" id="download" download="data.txt">点击下载</a>
 		            </div>
-		          </form>
+		        <!-- </form>-->
 		        </div>
 		    </div>
 

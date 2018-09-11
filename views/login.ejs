@@ -29,13 +29,13 @@
 	}
 	function doo() {
         var name=document.getElementById("name").value;
-        var password=document.getElementById("password").value;
+        var password=document.getElementById("password").value
         $.ajax({
             type: 'post',
             url: '/login',
             data: {
 				name:name,
-				password:password
+				password:password,
             },
             success: function (data) {
                 if (data==="fail2") {
@@ -47,7 +47,7 @@
 				}else location.href='/per_index';
             },
             error: function () {
-                alert('错误！')
+                alert('错误!!!!!!')
             }
 
         })
@@ -65,13 +65,15 @@
     function checkpw1() {
 	    var p1=document.getElementById("pw1").value;
 	    var p2=document.getElementById("pw2").value;
-	    if(p1!=p2)
+	    if(p1!==p2)
 		{
 		    alert("两次密码输入不一致！")
 			return false;
         }
-        else
+        else{
+            alert("注册成功！")
             return true;
+		}
     }
     function checkpw2() {
         var p3=document.getElementById("pw3").value;
@@ -81,8 +83,10 @@
             alert("两次密码输入不一致！")
             return false;
         }
-        else
+        else{
+            alert("注册成功！")
             return true;
+		}
     }
 
 </script>
@@ -177,19 +181,21 @@
 				<br>
 
 				<div id="per">
-					<form action="/per_reg" method="post" onsubmit="return checkpw1()">
-					<input type="radio" name="sex" value="male" id="male">男
-					<input type="radio" name="sex" value="female" id="female" >女
+					<form action="/per_reg" method="post" enctype="multipart/form-data" onsubmit="return checkpw1()">
+					<input type="radio" name="sex" value="男" id="male">男
+					<input type="radio" name="sex" value="女" id="female" >女
 					<br>
 					<br>
-					<label for="meeting">出生日期：</label><input id="birth" type="date" value="1900-01-01"/>
+					<label for="meeting">出生日期：</label><input id="birth" name="birth" type="date" value="1900-01-01"/>
 					<br>
 					<br>
 					<input type="text" name="Name" placeholder="用户名" required=""/>
 					<input type="password" name="Password" class="password" id="pw1" placeholder="密码" required=""/>
 					<input type="password" name="Password" class="password" id="pw2" placeholder="确认密码" required=""/>	<br>
+						上传头像： <input type="file" name="perphoto"  /> <br>
+						<br>
 						<input id="radio" type="checkbox" onclick="agree1()">我接受WeHealth获取我的健康数据。
-						<input id="accept1" type="submit" disabled="disabled" value="点击注册" >
+						<input id="accept1" type="submit" disabled="disabled" value="点击注册"  >
 					</form>
 				</div>
 
@@ -198,7 +204,9 @@
 					<input type="text" name="Name" placeholder="机构名称" required=""/>
 					<input type="password" name="Password" class="password" id="pw3" placeholder="密码" required=""/>
 					<input type="password" name="Password" class="password" id="pw4" placeholder="确认密码" required=""/>	<br>
-                    上传凭证： <input type="file" name="photo"  />
+						上传头像： <input type="file" name="orgphoto"  /> <br>
+						<br>
+                        上传凭证： <input type="file" name="certification"  />
 						<br>
 						<br>
 						<input id="auradio" type="checkbox" onclick="agree2()">我接受WeHealth获取我的健康数据。

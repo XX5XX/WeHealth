@@ -21,16 +21,38 @@
 	<link href="css/style-store.css" rel='stylesheet' type='text/css' />
 	<!-- Custom Theme files -->
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	</script>
+	</head>
 
 	<link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript">
+		function dooo(){
+		    if(document.getElementById("in").value==="Buy"){
+		        var price=document.getElementById("price").value;
+                $.ajax({
+                    type: 'post',
+                    url: '/per_hcStore',
+                    data: {
+                        price:price,
+                    },
+                    success: function (data) {
+                        if(data==="yes") {
+                            alert("购买成功！");
+                        }else alert("余额不足!");
+                    },
+                    error: function () {
+                        alert('错误！')
+                    }
 
+                })
+			}
+		}
+	</script>
 </head>
 <body>
 
 	<header>
 		<div class="logo">
-			<a href="per_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/per_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
@@ -60,7 +82,7 @@
 				<div class="work_nav">
 					
 					<ul class="btn clearfix">
-						<li><a href="/per_historyData" class="previous" data-title="Previous"></a></li>
+						<li><a href="/per_historyData_bloodPressure" class="previous" data-title="Previous"></a></li>
 						<li><a href="/per_index" class="grid" data-title="Portfolio"></a></li>
 						<li><a href="/per_visitorRecord" class="next" data-title="Next"></a></li>
 					</ul>
@@ -78,16 +100,18 @@
 		   				<div class="col-md-9">
     	    			<div class="row content_bottom">
 			   	   			<div class="col-md-3">
-			   	   			<div class="content_box" ><a href="single.html">
+			   	   			<div class="content_box" ><a href="/per_hcStore">
 			   	   	  			<div class="view view-fifth" border:1px solid #000>
 			   	   	     			<img src="img/p1.jpg" class="img-responsive" alt="">
 				   	   	 			<div class="content_box-grid">
 				   	   	  				<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
 				   	   	  				<div class="price">Price:
-						    				<span class="actual">$12.00</span>
+											<span class="actual"><input type="text" style="border:none; font-size:16px" id="price" value="12.00"></span>
 						  				</div>
 						  				<ul class="product_but">
-						  					<li class="but3">Buy</li>
+											<li class="but3">
+												<input type="button" id="in" style="border:none" value="Buy" onclick="return dooo()">
+											</li>
 						  					<div class="clearfix"> </div>
 						  				</ul>
 						   				<div class="mask">
@@ -108,7 +132,7 @@
 						    					<span class="actual">$12.00</span>
 						 	 				</div>
 							  				<ul class="product_but">
-							  					<li class="but3">Buy</li>
+												<li class="but3"><a href="/per_hcStore">Buy</a></li>
 							  					<div class="clearfix"> </div>
 							  				</ul>
 							   				<div class="mask">
@@ -129,7 +153,7 @@
 									    		<span class="actual">$12.00</span>
 									  		</div>
 									  		<ul class="product_but">
-									  			<li class="but3">Buy</li>
+									  			<li class="but3"><a href="/per_hcStore">Buy</a></li>
 									  			<div class="clearfix"> </div>
 									  		</ul>
 									   		<div class="mask">
@@ -150,7 +174,7 @@
 								    			<span class="actual">$12.00</span>
 								  			</div>
 								  			<ul class="product_but">
-								  				<li class="but3">Buy</li>
+												<li class="but3"><a href="/per_hcStore">Buy</a></li>
 								  				<div class="clearfix"> </div>
 								  			</ul>
 								   			<div class="mask">

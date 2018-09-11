@@ -4,15 +4,17 @@
 	<title>订单管理 | WeHealth 大健康数据平台</title>
 	<link rel="icon" type="image/png" sizes="16x16" href="img/logo1.ico">
 	<meta charset="utf-8">
-	<meta charset="utf-8">
-	<meta name="author" content="pixelhint.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="pixelhint.com">
 	<meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website  template"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
+
 <body>
 
 	<header>
@@ -23,12 +25,12 @@
 		<div id="menu_icon"></div>
 		<nav>
 			<ul>
-				<li><a href="org_index.ejs">主页</a></li>
-				<li><a href="org_personalInfo.html">账号信息</a></li>
-				<li><a href="org_aboutus.html">关于我们</a></li>
+				<li><a href="/org_index">主页</a></li>
+				<li><a href="/org_organizationInfo">账号信息</a></li>
+				<li><a href="/org_aboutus">关于我们</a></li>
 			</nav><!-- end navigation menu -->
 
-	<div class="footer clearfix">
+        <div class="footer clearfix">
 			<div class="rights">
 				<p>Copyright © 2018 WeHealth.</p>
 				<p>WeHealth，大健康数据管理平台</p>
@@ -43,33 +45,87 @@
 					<div class="work_nav">
 						
 						<ul class="btn clearfix">
-							<li><a href="org_myDevice.html" class="previous" data-title="我的设备"></a></li>
-							<li><a href="org_index.ejs" class="grid" data-title="个人主页"></a></li>
+							<li><a href="/org_myDevice" class="previous" data-title="我的设备"></a></li>
+							<li><a href="/org_index" class="grid" data-title="个人主页"></a></li>
 						</ul>							
 						
 					</div><!-- end work_nav -->
-					<h1 class="title">S</h1>
+					<h1 class="title">订单管理</h1>
 				</div>		
 			</section><!-- end top -->
 
+			<div id="oorderList">
+			</div>
+			<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+
 			<section class="wrapper">
-				<div class="content">
-					<p></p>
+				<div class="xt-center">
+					<!-- right -->
+					<div id="xt-center">
 
+						<div class="xt-table">
+						</div>
+						<div class="xt-fenye">
+							<div class="xt-fenye-left">当前第 1 / 1 页,每页10条，共 5条记录</div>
+							<div class="xt-fenye-right">
+								<a href="#">首页</a>
+								<a href="#">上一页</a>
+								<a href="#">下一页</a>
+								<a href="#">尾页</a>
+								<input type="text" name="text" />
+								<a href="#" class="xt-link">跳转</a>
+							</div>
+						</div>
 
-					<h2></h2>
+						<table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">
 
-					<p></p>
+							<!--<table id="mm" border="1" >-->
+							<tbody id="orderList"></tbody>
+						</table>
 
-					<h2></h2>
+						<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-					<p></p>
+						<script>
+                            function orgOrderTable() {
+                                $.ajax({
+                                    type: 'post',
+                                    url: '/per_myOrder',
+                                    success: function (jsonData) {
+                                        var str = '<table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">';
+                                        str += '<tr height="25px" class="xt-table">'
+                                        str += '<th>' + '订单编号' + '</th>';
+                                        str += '<th>' + '下单账号' + '</th>';
+                                        str += '<th>' + '商品名称' + '</th>';
+                                        str += '<th>' + '商品数量' + '</th>';
+                                        str += '<th>' + '支付金额' + '</th>';
+                                        str += '<th>' + '下单时间' + '</th>';
+                                        str += '<th>' + '订单状态' + '</th>';
+                                        str += '</tr>'
+                                        for (var j in jsonData) {
+                                            var obj = jsonData[j];
+                                            str += '<tr height="25px" class="xt-table" align="center">'
+                                            str += '<td>' + obj.orderId + '</td>';
+                                            str += '<td>' + obj.userName + '</td>';
+                                            str += '<td>' + obj.goodsName + '</td>';
+                                            str += '<td>' + obj.goodsAmount + '</td>';
+                                            str += '<td>' + obj.payHc + '</td>';
+                                            str += '<td>' + obj.payTime + '</td>';
+                                            str += '<td>' + obj.state + '</td>';
+                                            str += '</tr>'
+                                        }
+                                        str += '</table>';
+                                        $('#oorderList').html(str);
+                                    },
+                                    error: function () {
+                                        alert('错误！')
+                                    }
 
-					<p></p>
-
-					<p></p>
-
-				</div><!-- end content -->
+                                })
+                            }
+                            orgOrderTable();
+						</script>
+					</div>
+				</div>
 			</section>
 		</section><!-- end main -->
 		

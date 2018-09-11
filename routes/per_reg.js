@@ -1,34 +1,55 @@
 let express = require('express');
 let router = express.Router({});
-
+let formidable = require('formidable');
+let util = require("util");
+let uuidv1 = require('uuid/v1');
+let path = require("path");
+let fs = require("fs");
 let base = require('../dao/db/query');
 
 
 router.post('/', function(req, res, next) {
     // 1. 获取数据
-    console.log(req.body);
-    let userName = req.body.Name;
-    let loginPwd = req.body.Password[0];
-    let sex=req.body.sex;
-
-    // 2. 处理数据
-    // 2.1 生成用户注册对象
-    console.log(userName);
-    console.log(loginPwd);
-    console.log(sex);
-
-    // 2.2 验证用户是否已经注册
-    sql="select username from useInfo where username = "+"'"+userName+"'";
-    base.query(sql,function (err,rs) {
-        if(null === rs || undefined === rs){ // 没有注册
-            sql="insert into useInfo(username,sex,password) values("+"'"+userName+"',"+"'"+sex+"',"+"'"+loginPwd+"'"+")";
-            base.query(sql,function (err,rs) {
-                console.log("注册成功");
-                res.redirect('/login');
-            })
-        }else {
-            res.send("该用户已经注册过");
-        }
+    let form = new formidable.IncomingForm();
+    form.uploadDir = "./public";
+    // 3. 获取表单的内容
+    form.parse(req, (err, fields, files) =>{
+        // 3.1 生成随机的名称
+        let name = uuidv1();
+        // 3.2 获取上传文件的后缀
+        console.log(fields);
+        let username = fields.Name;
+        let loginPwd = fields.Password;
+        let sex=fields.sex;
+        let birthday=fields.birth;
+        //新建一个账号（区块链中）
+        let extName = path.extname(files.perphoto.name);
+        // 3.3 设置路径
+        let dirname="D:/DAPP/WeHealth";
+        let oldPath = dirname + "/" + files.perphoto.path;
+        let newPath = dirname + "/public/per_photo/" + name + extName;
+        let photopath = "per_photo"+"/"+name+extName;
+        console.log(oldPath);
+        console.log(newPath);
+        // 3.4 改名
+        fs.rename(oldPath, newPath, (err)=>{
+            if(!err){
+                sql="select userName from userInfo where userName = "+"'"+username+"'";
+                base.query(sql,function (err,rs) {
+                    if(null === rs[0] || undefined === rs[0]){ // 没有注册
+                        sql="insert into userInfo(userName,password,sex,birthday,photopath) values("+"'"+username+"',"+"'"+loginPwd+"',"+"'"+sex+"',"+"'"+birthday+"',"+"'"+photopath+"'"+")";
+                        base.query(sql,function (err,rs) {
+                            console.log("注册成功");
+                            res.redirect('/login');
+                        })
+                    }else {
+                        res.send("fail");
+                    }
+                });
+            }else {
+                throw  err;
+            }
+        });
     });
 
     //res.redirect('/login');

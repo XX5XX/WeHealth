@@ -23,21 +23,25 @@
 	<link rel="stylesheet" href="css/bootstrap-wysihtml5.css" />
 	<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-	
+	<script type="text/javascript">
+        function insert() {
+			alert("上传病例信息成功！")
+        }
+		</script>
 </head>
 <body>
 
 	<header>
 		<div class="logo">
-			<a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/org_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
 		<nav>
 			<ul>
-				<li><a href="org_index.ejs">主页</a></li>
-				<li><a href="org_organizationalInfo.ejs">账号信息</a></li>
-				<li><a href="org_aboutus.html">关于我们</a></li>
+				<li><a href="/org_index">主页</a></li>
+				<li><a href="/org_organizationInfo">账号信息</a></li>
+				<li><a href="/org_aboutus">关于我们</a></li>
 			</ul>
 		</nav><!-- end navigation menu -->
 
@@ -56,8 +60,8 @@
 				<div class="work_nav">
 							
 					<ul class="btn clearfix">
-						<li><a href="org_index.ejs" class="grid" data-title="主页"></a></li>
-						<li><a href="org_downloadData.ejs" class="next" data-title="数据获取"></a></li>
+						<li><a href="/org_index" class="grid" data-title="主页"></a></li>
+						<li><a href="/org_downloadData" class="next" data-title="数据获取"></a></li>
 					</ul>							
 					
 				</div><!-- end work_nav -->
@@ -73,35 +77,52 @@
 		        </div>
 
 		        <div class="widget-content nopadding">
-		          <form action="#" method="get" class="form-horizontal">
+		          <form action="/org_uploadData" method="post" class="form-horizontal" onsubmit="insert()">
+					  <div class="control-group">
+						  <label class="control-label">姓名 :</label>
+						  <div class="controls">
+							  <input type="text" class="span11" placeholder="Name" name="name" id="name" value="" />
+						  </div>
+					  </div>
 		            <div class="control-group">
 		              <label class="control-label">性别 :</label>
 		              <div class="controls">
-		                <input type="text" class="span11" placeholder="Gender" />
+		                <input type="text" class="span11" placeholder="Gender" name="sex" id="sex" value=""/>
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label">年龄 :</label>
+		              <label class="control-label">生日 :</label>
 		              <div class="controls">
-		                <input type="text" class="span11" placeholder="Age" />
+		                <input type="text" class="span11" placeholder="Age" name="birth" id="birth" value=""/>
 		              </div>
 		            </div>
+					  <div class="control-group">
+						  <label class="control-label">身高 :</label>
+						  <div class="controls">
+							  <input type="text" class="span11" placeholder="Height" name="height" id="height" value=""/>
+						  </div>
+					  </div><div class="control-group">
+						  <label class="control-label">体重 :</label>
+						  <div class="controls">
+							  <input type="text" class="span11" placeholder="Weight" name="weight" id="weight" value=""/>
+						  </div>
+					  </div>
 		            <div class="control-group">
 		              <label class="control-label">心率 :</label>
 		              <div class="controls">
-		                <input type="password"  class="span11" placeholder="Heart rate"  />
+		                <input type="password"  class="span11" placeholder="Heart rate" name="hr" id="hr" value="" />
 		              </div>
 		            </div>
 		            <div class="control-group">
 		              <label class="control-label">血压 :</label>
 		              <div class="controls">
-		                <input type="text" class="span11" placeholder="Blood pressure" />
+		                <input type="text" class="span11" placeholder="Blood pressure" name="bp" id="bp" value=""/>
 		              </div>
 		            </div>
 		            	<div class="control-group">
 		              	<label class="control-label">睡眠 :</label>
 		              	<div class="controls">
-		                	<input type="text" class="span11" />
+		                	<input type="text" class="span11" placeholder="Sleep quality" name="sq" id="sq" value=""/>
 		                	<span class="help-block">Description field</span> </div>
 		            	</div>
 		            	<div class="control-group">
@@ -111,7 +132,7 @@
 		              		</div>
 		            	</div>
 		            	<div class="form-actions">
-		              		<button type="submit" class="btn btn-success">确认上传</button>
+		              		<input type="submit" class="btn btn-success" value="确认上传" >
 		              	</div>
 		            </form>
 		        </div>

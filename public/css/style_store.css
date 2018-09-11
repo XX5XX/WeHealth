@@ -14,31 +14,9 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.header{
-	background: url(../images/header_bg.jpg) no-repeat;
-	padding:3em 0 0;
-	background-size: 100% 100%;
-	position:relative;
-}
-.header_top{
-	padding:1em 0;
-	position:absolute;
-	top:-2px;
-	
-}
 
-ul.phone{
-	padding:0;
-	list-style:none;
-	float: left;
-}
-ul.phone li {
-	display: inline-block;
-}
-ul.phone li span {
-	color: #fff;
-	font-size:1em;
-}
+
+
 h3.nav_right{
 	display:none;
 }
@@ -49,85 +27,8 @@ i.mobile {
 	float: left;
 	margin-right: 5px;
 }
-ul.phone li.phone_left{
-	margin-right:6em;
-}
-ul.phone li.phone_right{
-	color:#B7C9E0;
-	font-size:0.85em;
-	text-shadow: -1px 0px 1px #073E7F;
-	-webkit-text-shadow: -1px 0px 1px #073E7F;
-	-moz-text-shadow: -1px 0px 1px #073E7F;
-	-o-text-shadow: -1px 0px 1px #073E7F;
-}
-ul.social li:first-child {
-	margin-left: 0;
-}
-ul.social{
-	padding:0 7em;
-	float: left;
-	margin-top:-5px;
-	list-style:none;
-}
-ul.social li{
-	display: inline-block;
-	margin-left: 5px;
-}
-ul.social li a i {
-	width:30px;
-	height:30px;
-	display: block;
-	background: url(../images/img-sprite.png)#486283 no-repeat;
-	border-radius: 1em;
-	-webkit-border-radius: 1em;
-	-moz-border-radius: 1em;
-	-o-border-radius: 1em;
-}
-ul.social li a i:hover {
-	background: url(../images/img-sprite.png)#d84828 no-repeat;
-}
-ul.social li a i.tw {
-	background-position:-35px -1px;
-}
-ul.social li a i.fb{
-	background-position:-70px -3px;
-}
-ul.social li a i.rss{
-	background-position:-110px -3px;
-}
-ul.social li a i.msg{
-	background-position:-150px -2px;
-}
-ul.social li a {
-	display: block;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-.tlinks{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
-ul.shopping_cart{
-	list-style:none;
-	float:left;
-	padding: 0;
-	background: #f49a86;
-	background: -moz-linear-gradient(top,  #f49a86 0%, #e56346 50%, #d84828 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f49a86), color-stop(50%,#e56346), color-stop(100%,#d84828));
-	background: -webkit-linear-gradient(top,  #f49a86 0%,#e56346 50%,#d84828 100%);
-	background: -o-linear-gradient(top,  #f49a86 0%,#e56346 50%,#d84828 100%);
-	background: -ms-linear-gradient(top,  #f49a86 0%,#e56346 50%,#d84828 100%);
-	background: linear-gradient(to bottom,  #f49a86 0%,#e56346 50%,#d84828 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f49a86', endColorstr='#d84828',GradientType=0 );
-	margin-top: -7px;
-	border-radius: 1em;
-	-webkit-border-radius: 1em;
-	-moz-border-radius: 1em;
-	-o-border-radius: 1em;
-	box-shadow: 0px 1px 0px 1px #3d5778;
-	-webkit-box-shadow: 0px 1px 0px 1px #3d5778;
-	-moz-box-shadow: 0px 1px 0px 1px #3d5778;
-	-o-box-shadow: 0px 1px 0px 1px #3d5778;
-}
+
+/*
 ul.shopping_cart li.shop_left:hover{
 	background: #ffd1c7;
 	background: -moz-linear-gradient(top,  #ffd1c7 0%, #fe9780 50%, #d84828 100%);
@@ -257,7 +158,7 @@ span.m_1{
 	background:rgba(2, 113, 113, 0.35) !important;
 	color:#fff !important;
 	border-radius: .3em;
-	/*--box-shadow: inset 0px 1px 5px 1px rgba(0, 0, 0, 0.23), 0px 0px 5px 1px rgba(255, 255, 255, 0.1);--*/
+	/////--box-shadow: inset 0px 1px 5px 1px rgba(0, 0, 0, 0.23), 0px 0px 5px 1px rgba(255, 255, 255, 0.1);--
 	box-shadow: 
     inset 0 2px 0 rgba(0,0,0,.2), 
     0 0 4px rgba(0,0,0,0.1);
@@ -449,7 +350,7 @@ transition: all 0.3s ease-out;
 .form-submit{
 	margin: 10px 0px 0 6px;
 }
-/*--content--*/
+//////--content--
 .main{
 	background: url(../images/body_bg.jpg)
 }
@@ -665,6 +566,7 @@ ul.feature_grid li.grid1 img, ul.feature_grid li.grid2 img{
 	-moz-border-radius: 0.2em;
 	-o-border-radius: 0.2em;
 }
+*/
 .price{
 	font-size:0.8125em;
 }
@@ -674,22 +576,63 @@ span.actual {
 	font-weight:bold;
 }
 .but1 a {
-	display: inline-block;
-	border: none;
-	color: #FE6847;
-	outline: none;
-	font-size:0.8125em;
-	-webkit-appearance: none;
-	padding:5px 0;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-ms-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-	text-decoration: none;
+	font-size: 12px;
+    color: white;
+    border: 1px solid #f64662;
+    padding: 1px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 5px;
+    background: #f64662;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+	height: 30px;
+	width: 90px;
+	text-align: center;
+	float: right;
 }
 .but1 a:hover {
-	color:#555;
+	background: #dd356e;
+	border: 1px solid #dd356e;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
+.but2 a {
+	font-size: 12px;
+    color: white;
+    border: 1px solid #3b5998;
+    padding:2px 0 0 0 ;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 5px;
+    background: #3b5998;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+	height: 30px;
+	width: 90px;
+	text-align: center;
+	float: right;
+}
+.but2 a:hover {
+	background: #1f3c7b;
+	border: 1px solid #1f3c7b;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
 }
 .content_box{
 	box-shadow: 0 0px 0 5px #E8E5AD;
@@ -816,7 +759,7 @@ ul.dc_paginationA06 li a:hover, ul.dc_paginationA06 li a.current {
 	background: #c2be67;
 	color: #FFF;
 }
-/*--footer--*/
+/*--footer--
 .footer{
 	background:url(../images/footer_bg.png);
 	padding:3em 0;
@@ -991,7 +934,7 @@ ul.secure li.secure_desc{
 .copy p a:hover{
 	text-decoration:none;
 }
-/*--single--*/
+////--single--
 .single{
 	padding:3em 0;
 }
@@ -1190,19 +1133,19 @@ i.zocial-pin{
 span.banners--small--text{
 	float:left;
 }
-/*--aboutus--*/
-.aboutus-form{
+////--contact--
+.contact-form{
 	position:relative;
 }
-.aboutus-form div{
+.contact-form div{
 	padding:5px 0;
 }
-.aboutus-form span{
+.contact-form span{
 	display:block;
 	font-size:0.85em;
 	color: #999;
 }
-.aboutus-form input[type="text"],.aboutus-form textarea{
+.contact-form input[type="text"],.contact-form textarea{
 	padding: 12px;
 	display: block;
 	width: 99%;
@@ -1214,11 +1157,11 @@ span.banners--small--text{
 	border: 1px solid #EBEBEB;
 	-webkit-appearance: none;
 }
-.aboutus-form textarea{
+.contact-form textarea{
 	resize:none;
 	height:120px;		
 }
-.aboutus-form input[type="submit"]{
+.contact-form input[type="submit"]{
 	cursor: pointer;
 	border: none;
 	outline: none;
@@ -1239,13 +1182,13 @@ span.banners--small--text{
 	-o-border-radius: 5px;
 	margin: 1em 0 0em;
 }
-.aboutus-form input[type="submit"]:hover{
+.contact-form input[type="submit"]:hover{
 	background-color:#F87052;
 }
-.aboutus-form input[type="submit"]:active{
+.contact-form input[type="submit"]:active{
 	background-color:#F87052;
 }
-.aboutus-form p{
+.contact-form p{
 	color:#999;
 	font-size:0.85em;
 	margin-bottom:2em;
@@ -1253,7 +1196,7 @@ span.banners--small--text{
 label{
 	font-weight:normal !important;
 }
-/*----responsive-tabs----*/
+/////----responsive-tabs----
 ul.resp-tabs-list, p {
     margin: 0px;
     padding: 0px;
@@ -1319,7 +1262,7 @@ h2.resp-tab-title:last-child {
     border-bottom: 12px solid #EEE !important;
     background: blue;
 }
-/*-----------Vertical tabs-----------*/
+/////-----------Vertical tabs-----------
 .resp-vtabs ul.resp-tabs-list {
    float: left;
    width: 20%;
@@ -1371,7 +1314,7 @@ h2.resp-tab-active span.resp-arrow {
     border-right: 6px solid transparent;
     border-bottom: 12px solid #EEE;
 }
-/*-----------Accordion styles-----------*/
+//////-----------Accordion styles-----------
 h2.resp-tab-active {
     background: #fe6847 !important;
 	color: #fff;
@@ -1393,7 +1336,7 @@ h2.resp-tab-active {
 .resp-tab-content-active {
     display: block;
 }
-/*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
+/////Here your can change the breakpoint to set the accordion, when screen resolution changed
 @media only screen and (max-width: 768px) {
     ul.resp-tabs-list {
         display: none;
@@ -1454,7 +1397,7 @@ h2.resp-tab-active {
 	text-transform: uppercase;
 }
 .vertical-tabs h4 {
-	font-size: 0.8em;
+	font-size: 0.9em;
 	padding: 0.8em 0 0.8em;
 	color:#FE6847;
 }
@@ -1497,7 +1440,7 @@ h2.resp-tab-active {
 	font-size: 0.8em;
 	padding: 0.5em 0;
 }
-/*----//responsive-tabs----*/
+//////----//responsive-tabs----
 .related_products{
 	margin-top:3em;
 }
@@ -1506,7 +1449,7 @@ h2.resp-tab-active {
 	font-size: 1.5em;
 	margin-bottom:1em;
 }
-/*--fruits--*/
+/////--fruits--
 .breadcrumb {
 	padding:0;
 	margin-bottom: 20px;
@@ -1638,6 +1581,7 @@ select#disp-order-sorter {
 .pagenation{
 	padding:1em 0;
 }
+*/
 ul.product_img{
 	padding:0;
 	list-style:none;
@@ -1681,19 +1625,20 @@ ul.product_img li.product_right h4 a:hover{
 span.model{
 	color:#6B6B6B;
 	font-weight:normal;
-	font-size:13px;
+	font-size:14px;
 }
 .product_price{
-	font-size:0.8125em;
-	margin-top:1em;
+	color:#6B6B6B;
+	font-weight:normal;
+	font-size:15px;
 }
 p.detail_desc{
-	font-size:0.8125em;
+	font-size:1em;
 	line-height:1.8em;
 	color:#6B6B6B;
 }
 h5.detail{
-	margin:1em 0 0.2em;
+	margin:1.1em 0 0.2em;
 }
 p.detail_desc a{
 	text-decoration:underline;
@@ -1701,7 +1646,7 @@ p.detail_desc a{
 .Product_top{
 	padding: 3em 0 1em;
 }
-/*--store--*/
+/*--store--
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -1776,7 +1721,7 @@ p.c_m2{
 .club_top{
 	margin-bottom:2em;
 }
-/*--my account--*/
+/*--my account--
 .login-left h3, .login-right h3 {
 	color:#FF5B36;
 	font-size: 1em;
@@ -1866,7 +1811,7 @@ p.c_m2{
 .account_grid{
 	margin-top:2em;
 }
-/*--register--*/
+/*--register--
 .register-top-grid h3, .register-bottom-grid h3 {
 	color:#FF5B36;
 	font-size: 1em;
@@ -1992,7 +1937,7 @@ p.c_m2{
 div.register-bottom-grid {
 	margin-top: 2em;
 }
-/*--responsive design--*/
+/*--responsive design--
 @media (max-width:1366px){
 }
 @media (max-width:1280px){

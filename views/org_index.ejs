@@ -11,19 +11,36 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+        function doo() {
+            $.ajax({
+                type: 'post',
+                url: '/org_index',
+                success: function (data) {
+                    document.getElementById("name").value=data.orgName;
+                    // document.getElementById("upload").value=data.orgName;
+                    // document.getElementById("download").value=data.orgName;
+                },
+                error: function () {
+                    alert('错误！')
+                }
+            })
+        }
+        doo();
+        </script>
 </head>
 <body>
 
 	<header>
 		<div class="logo">
-			<a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/org_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
 		<nav>
 			<ul>
 				<li><a href="/org_index" class="selected">主页</a></li>
-				<li><a href="/org_organizationalInfo">账号信息</a></li>
+				<li><a href="/org_organizationInfo">账号信息</a></li>
 				<li><a href="/org_aboutus">关于我们</a></li>
 			</ul>
 		</nav><!-- end navigation menu -->
@@ -41,24 +58,29 @@
 		<div class="work" >
 			<div style="text-align: center;margin: 15px">
 			<img src="img/portrait.png" alt="" height=80 >
-			<p style="line-height: 20px">
-				Peter Pan
-				<br>
-				<br>
-				实时数据监控<br>
-				心率：<br>
-				血压：<br>
-				睡眠：
-			</p>
+				<h1 style="font-size: 16px;line-height: 18px">
+					<br>
+					<h4 align="center" ><input type="text" style="border:none;font-size:28px;background-color:transparent;font-weight: 800" size="6" id="name" value="" readonly></h4>
+					<br>
+					<td id="name" value="123"></td>
+					—数据监控—<br>
+					<br>
+					<br>
+					<br>
+					<h4 align="center">已上传：<input type="text" style="border:none;font-size:24px;background-color:transparent" id="upload" value="" readonly></h4>
+					<br>
+					<br>
+					<h4 align="center">已下载：<input type="text" style="border:none;font-size:24px;background-color:transparent" id="download" value="" readonly></h4>
+				</h1>
 			</div>
 		</div>
 
 		<div class="work">
 			<a href="/org_uploadData">
-				<img src="img/history1.png" class="media" alt=""/>
+				<img src="img/upload.png" class="media" alt=""/>
 				<div class="caption">
 					<div class="work_title">
-						<h1>数据上传</h1>
+						<h1>将您持有的健康数据与其他医疗机构用户共享。</h1>
 					</div>
 				</div>
 			</a>
@@ -66,10 +88,10 @@
 
 		<div class="work">
 			<a href="/org_downloadData">
-				<img src="img/shop2.png" class="media" alt=""/>
+				<img src="img/download.png" class="media" alt=""/>
 				<div class="caption">
 					<div class="work_title">
-						<h1>数据获取</h1>
+						<h1>根据您的需求，选择获取区块链上已共享的健康数据。</h1>
 					</div>
 				</div>
 			</a>
@@ -77,10 +99,10 @@
 
 		<div class="work">
 			<a href="/org_hcStore">
-				<img src="img/visitorrecord1.png" class="media" alt=""/>
+				<img src="img/HCstore.png" class="media" alt=""/>
 				<div class="caption">
 					<div class="work_title">
-						<h1>HC店铺</h1>
+						<h1>管理您的Health Coin商店。</h1>
 					</div>
 				</div>
 			</a>
@@ -88,10 +110,10 @@
 
 		<div class="work">
 			<a href="/org_transactionRecord">
-				<img src="img/mydevice2.png" class="media" alt=""/>
+				<img src="img/transportrecord.png" class="media" alt=""/>
 				<div class="caption">
 					<div class="work_title">
-						<h1>交易记录</h1>
+						<h1>查看您相关数据的交换记录。</h1>
 					</div>
 				</div>
 			</a>
@@ -99,10 +121,10 @@
 
 		<div class="work">
 			<a href="/org_myOrder">
-				<img src="img/mymoney1.png" class="media" alt=""/>
+				<img src="img/order.png" class="media" alt=""/>
 				<div class="caption">
 					<div class="work_title">
-						<h1>订单管理</h1>
+						<h1>管理您的提供的医疗服务。</h1>
 					</div>
 				</div>
 			</a>

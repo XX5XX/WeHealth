@@ -1,7 +1,7 @@
-let connection = require("./db.js");
+let base = require("./query");
 
 
-connection.query("SELECT * from useInfo ", function (error, results,fields) {
-    if (error) throw error;
-    console.log('The solution is: ', results[0].username);
+sql = "select bloodPressure from usertrans where userName = " + "'" + "陆仁家" + "'";
+base.query(sql, function (err, resu) {
+    console.log(resu[0].bloodPressure);
 });

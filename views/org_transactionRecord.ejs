@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>交易记录 | WeHealth 大健康数据平台</title>
     <link rel="icon" type="image/png" sizes="16x16" href="img/logo1.ico">
@@ -16,161 +16,55 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
-        </div><!-- end logo -->
+<header>
+    <div class="logo">
+        <a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+    </div><!-- end logo -->
 
-        <div id="menu_icon"></div>
-        <nav>
-            <ul>
-                <li><a href="org_index.ejs">主页</a></li>
-                <li><a href="org_personalInfo.html">账号信息</a></li>
-                <li><a href="org_aboutus.html">关于我们</a></li>
-            </ul>
-        </nav><!-- end navigation menu -->
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            <li><a href="/org_index">主页</a></li>
+            <li><a href="/org_personalInfo">账号信息</a></li>
+            <li><a href="/org_aboutus">关于我们</a></li>
+        </ul>
+    </nav><!-- end navigation menu -->
 
-        <div class="footer clearfix">
-            <div class="rights">
-                <p>Copyright © 2018 WeHealth.</p>
-                <p>WeHealth，大健康数据管理平台</p>
-            </div><!-- end rights -->
-        </div ><!-- end footer -->
-    </header><!-- end header -->
+    <div class="footer clearfix">
+        <div class="rights">
+            <p>Copyright © 2018 WeHealth.</p>
+            <p>WeHealth，大健康数据管理平台</p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
 
+<section class="main clearfix">
 
-    <section class="main clearfix">
+    <section class="top">
+        <div class="wrapper content_header clearfix">
+            <div class="work_nav">
 
-        <section class="top">   
-            <div class="wrapper content_header clearfix">
-                <div class="work_nav">
-                    
-                    <ul class="btn clearfix">
-                        <li><a href="org_hcStore.ejs" class="previous" data-title="HC店铺"></a></li>
-                        <li><a href="org_index.ejs" class="grid" data-title="主页"></a></li>
-                        <li><a href="org_myOrder.ejs" class="next" data-title="订单管理"></a></li>
-                    </ul>                           
-                    
-                </div><!-- end work_nav -->
-                <h1 class="title">交易记录</h1>
-            </div>      
-        </section><!-- end top -->
+                <ul class="btn clearfix">
+                    <li><a href="/org_hcStore" class="previous" data-title="HC店铺"></a></li>
+                    <li><a href="/org_index" class="grid" data-title="主页"></a></li>
+                    <li><a href="/org_myOrder" class="next" data-title="订单管理"></a></li>
+                </ul>
 
-        <section class="wrapper">
-            <div class="xt-center">
-            
+            </div><!-- end work_nav -->
+            <h1 class="title">交易记录</h1>
+        </div>
+    </section><!-- end top -->
+
+    <div id="tranxList">
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <section class="wrapper">
+        <div class="xt-center">
+
             <!-- right -->
             <div id="xt-center">
-                
-                <div class="xt-table">
-                <table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">
-                        <tr>
-                        <th>编号</th>
-                        <th>机构id</th>
-                        <th>机构账户地址</th>
-                        <th>交易数据量</th>
-                        <th>支付金额</th>
-                        <th>交易时间</th>
-                        </tr>
-                        <tr>
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr>
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr>
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr>
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr>
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr>
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
-                        <tr class="xt-bg">
-                            <td>1230</td>
-                            <td>1001</td>
-                            <td>0xxxxxxxxxxxxx</td>
-                            <td>1000</td>
-                            <td>100</td>
-                            <td>2018-09-04 17:56:24</td>
-                        </tr>
 
-                    </table>
-                </div>
                 <div class="xt-fenye">
                     <div class="xt-fenye-left">当前第 1 / 123 页,每页10条，共 1230条记录</div>
                     <div class="xt-fenye-right">
@@ -178,15 +72,61 @@
                         <a href="#">上一页</a>
                         <a href="#">下一页</a>
                         <a href="#">尾页</a>
-                        <input type="text" name="text" /> 
+                        <input type="text" name="text" />
                         <a href="#" class="xt-link">跳转</a>
                     </div>
                 </div>
 
+                <table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">
+
+                    <!--<table id="mm" border="1" >-->
+
+                    <tbody id="tranxList"></tbody>
+                </table>
+
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+                <script>
+                    function orgTranxTable() {
+                        $.ajax({
+                            type: 'post',
+                            url: '/org_transactionRecord',
+                            success: function (jsonData) {
+                                var str = '<table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%" >';
+                                str += '<tr height="25px" class="xt-table">'
+                                str += '<th>' + '机构编号' + '</th>';
+                                str += '<th>' + '机构名称' + '</th>';
+                                str += '<th>' + '交易日期' + '</th>';
+                                str += '<th>' + '交易数量' + '</th>';
+                                str += '<th>' + '支付金额' + '</th>';
+                                //str += '<th>' + '订单状态' + '</th>';
+                                str += '</tr>'
+                                for (var j in jsonData) {
+                                    var obj = jsonData[j];
+                                    str += '<tr height="25px" class="xt-table" align="center">'
+                                    str += '<td>' + obj.orgId + '</td>';
+                                    str += '<td>' + obj.orgName + '</td>';
+                                    str += '<td>' + obj.date + '</td>';
+                                    str += '<td>' + obj.amount + '</td>';
+                                    str += '<td>' + obj.payCounts + '</td>';
+                                    str += '</tr>'
+                                }
+                                str += '</table>';
+                                $('#tranxList').html(str);
+                            },
+                            error: function () {
+                                alert('错误！')
+                            }
+
+                        })
+                    }
+                    orgTranxTable();
+                </script>
+
             </div>
-            </div>
-        </section>
+        </div>
     </section>
+</section>
 
 </body>
 </html>

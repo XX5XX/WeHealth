@@ -23,6 +23,11 @@ let org_myOrderRouter = require('./routes/org_myOrder');
 let org_uploadDataRouter = require('./routes/org_uploadData');
 let org_aboutusRouter = require('./routes/org_aboutus');
 let org_regRouter = require('./routes/org_reg');
+let updataInfo = require('./routes/updateInfo');
+let insertData=require('./routes/insertData');
+let per_historyData_bloodPressureRouter=require('./routes/per_historyData_bloodPressure');
+let per_historyData_heartRateRouter=require('./routes/per_historyData_heartRate');
+let per_historyData_sleepQualityRouter=require('./routes/per_historyData_sleepQuality');
 //var shop = require('img/shop');
 
 let app = express();
@@ -56,6 +61,11 @@ app.use('/org_organizationInfo',org_organizationInfoRouter);
 app.use('/org_transactionRecord',org_transactionRecordRouter);
 app.use('/org_aboutus',org_aboutusRouter);
 app.use('/org_reg',org_regRouter);
+app.use('/updateInfo',updataInfo);
+app.use('/insertData',insertData);
+app.use('/per_historyData_bloodPressure',per_historyData_bloodPressureRouter);
+app.use('/per_historyData_heartRate',per_historyData_heartRateRouter);
+app.use('/per_historyData_sleepQuality',per_historyData_sleepQualityRouter);
 //app.use('/public/img/shop.png',shop);
 
 // catch 404 and forward to error handler

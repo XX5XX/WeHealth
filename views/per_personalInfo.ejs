@@ -9,39 +9,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<link href="css/demo.css" rel="stylesheet" />
+	<link href="css/switchery.min.css" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=Istok Web:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Prosto+One" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript">
 
-        function doo() {
-            $.ajax({
-                type: 'post',
-                url: '/per_personalInfo',
-                success: function (data) {
-                    document.getElementById("name").value=data;
-                    console.log(data);
-                    // document.getElementById("password").value=data.password;
-                },
-                error: function () {
-                    alert('错误！')
-                }
-
-            })
-        }
-		function exit()
-		{
-			if (confirm("确定要退出WeHealth吗？"))
-			{
-				window.location.href="/login"
-			}
-		}
-    doo();
-	</script>
 </head>
 <body>
 	<header>
 		<div class="logo">
-			<a href="per_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/per_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
@@ -75,20 +59,21 @@
 				<h2>WeHealth账号</h2>
 				
 				<br />
-				<h4 align="center">头&emsp;像&emsp;<img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></h4>
-				<h4 align="center">账户名&emsp;<input type="text" id="name" name="input1" value="" readonly></h4>
-				<h4 align="center">密&emsp;码&emsp;<input type="text" name="input2" value="123456" readonly></h4>
+				<h4 align="center"><img src="?" id="photo" height="100px" title="WeHealth" alt="WeHealth" /></h4>
+				<h4 align="center"><input type="text" id="name" name="input1" value="" readonly style="font-size: 24px; text-align: center;border:none;font-weight: 600;"></h4>
 
 				<hr />
 
 				<br />
-				<h4 align="center">性&emsp;别&emsp;<input type="text" name="input1" value="男" readonly></h4>
-				<h4 align="center">生&emsp;日&emsp;<input type="text" name="input2" value="1994-04-21" readonly></h4>
+				<h4 align="center">性&emsp;别&emsp;<input type="text" id="sex" name="input1" value="" style="font-size: 20px;width:120px;"></h4>
+				<h4 align="center">生&emsp;日&emsp;<input type="text" id="birth" name="input2" value="1994-04-21" style="font-size: 20px;width:120px;"></h4>
 
 				<hr />
 
 				<br />
-				<h4 align="center">授&emsp;权&emsp;<input type="text" name="input1" value="是" readonly></h4>
+
+				<h4 align="center">授&emsp;权&emsp;<input type="checkbox" name="judge" id="judge" class="js-switch" />
+					</h4>
 
 				<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
 
@@ -96,18 +81,103 @@
 				<h2>区块链账号</h2>
 				
 				<br />
-				<h4 align="center">地&emsp;址&emsp;<input type="text" name="input3" value="0xxxxxxxxxxxxxx" readonly></h4>
-				<h4 align="center">私&emsp;钥&emsp;<input type="text" name="input1" value="***************" readonly></h4>
-				<h4 align="center">余&emsp;额&emsp;<input type="text" name="input2" value="1.00" readonly></h4>
+				<h4 align="center">地&emsp;址&emsp;<input type="text" id="addr" name="input3" value="0xxxxxxxxxxxxxx" readonly  style="font-size: 20px;width:300px;"></h4>
+				<h4 align="center">私&emsp;钥&emsp;<input type="text" id="privateKey" name="input1" value="***************" readonly  style="font-size: 20px;width:300px;"></h4>
+				<h4 align="center">公&emsp;钥&emsp;<input type="text" id="publicKey" name="input2" value="1.00" readonly  style="font-size: 20px;width:300px;"></h4>
 
 				<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
-
-				<div style="text-align: center;">
+				<!--div style="text-align: center;">
+					<input type="button" name="exit" onclick="change()" value="保存更改" style="color: white; background: red; width: 300px; height: 30px; font-size: 32" />
 					<input type="button" name="exit" onclick="exit()" value="退出登录" style="color: white; background: red; width: 300px; height: 30px; font-size: 32" />
+				</div-->
+				<br>
+				<br>
+				<div style="text-align: center;font-size:20px;">
+				<div class="but2">
+					<a href="#" onclick="change()">保存更改</a>
 				</div>
-
+				<div class="but1">
+					<a href="#" onclick="exit()">退出登录</a>
+				</div>
+			</div>
 			</div><!-- end content -->
 		</section>
 	</section><!-- end main -->
+	<script type="text/javascript" src="js/switchery.min.js"></script>
+	<script type="text/javascript">
+        var ele=document.getElementById("judge");
+        var myswitchery = new Switchery(ele);
+
+	</script>
+	<script type="text/javascript">
+        function setSwitchery(switchElement, checkedBool) {
+            //alert(switchElement.checked);
+            if ((checkedBool && !switchElement.isChecked()) || (!checkedBool && switchElement.isChecked())) {
+                switchElement.setPosition(true);
+                switchElement.handleOnchange(true);
+            }
+        }
+        function doo(qualifiedName, value) {
+            $.ajax({
+                type: 'post',
+                url: '/per_personalInfo',
+                success: function (data) {
+                    document.images.photo.src=data.photopath;
+                    document.getElementById("name").value=data.userName;
+                    document.getElementById("sex").value=data.sex;
+                    document.getElementById("birth").value=data.birthday;
+                    if(data.authorization==="是"){
+                        setSwitchery(myswitchery,true);
+                    } else {
+                        setSwitchery(myswitchery,false);
+                    }
+                    document.getElementById("addr").value=data.address;
+                    document.getElementById("publicKey").value=data.publickey;
+                    document.getElementById("privateKey").value=data.privatekey;
+                },
+                error: function () {
+                    alert('错误！')
+                }
+            })
+        }
+        function exit()
+        {
+            if (confirm("确定要退出WeHealth吗？"))
+            {
+                window.location.href="/login"
+            }
+        }
+        function change() {
+            var name=document.getElementById("name").value;
+            var sex=document.getElementById("sex").value;
+            var birth=document.getElementById("birth").value;
+            var isAuthor="否";
+            if(document.getElementById("judge").checked){
+                isAuthor="是";
+            }
+            $.ajax({
+                type: 'post',
+                url: '/updateInfo',
+                data: {
+                    name:name,
+                    sex:sex,
+                    birth:birth,
+                    isAuthor:isAuthor
+                },
+                success: function (data) {
+                    if(data){
+                        alert("数据更改成功");
+                        window.location.href='/per_personalInfo'
+                    }
+                },
+                error: function () {
+                    alert('错误！')
+                }
+
+            })
+        }
+        doo();
+        //document.getElementById("judge").checked=true;
+	</script>
 </body>
 </html>
