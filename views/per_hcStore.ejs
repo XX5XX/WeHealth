@@ -9,44 +9,45 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery.min.js"></script>
+	<!--<script src="js/jquery.min.js"></script>-->
 	<!-- Custom Theme files -->
 	<link href="css/style-store.css" rel='stylesheet' type='text/css' />
 	<!-- Custom Theme files -->
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	</head>
+	<script type="text/javascript">
+		function buy(id,id2) {
+		    id2+="u";
+            var price=document.getElementById(id).value;
+			var service=document.getElementById(id2).innerHTML
+            $.ajax({
+                type: 'post',
+                url: '/per_hcStore',
+				data:{
+                    price:price,
+					service:service
+				},
+                success: function (data) {
+                  if(data){
+                      alert("商品购买成功！")
+				  }else alert("余额不足！")
+                },
+                error: function () {
+                    alert('错误！')
+                }
+            })
+        }
+		</script>
+</head>
 
-	<link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <script type="text/javascript">
-		function dooo(){
-		    if(document.getElementById("in").value==="Buy"){
-		        var price=document.getElementById("price").value;
-                $.ajax({
-                    type: 'post',
-                    url: '/per_hcStore',
-                    data: {
-                        price:price,
-                    },
-                    success: function (data) {
-                        if(data==="yes") {
-                            alert("购买成功！");
-                        }else alert("余额不足!");
-                    },
-                    error: function () {
-                        alert('错误！')
-                    }
+<!--<link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>-->
 
-                })
-			}
-		}
-	</script>
 </head>
 <body>
 
@@ -54,233 +55,180 @@
 		<div class="logo">
 			<a href="/per_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
-
-		<div id="menu_icon"></div>
-		<nav>
-			<ul>
-				<li><a href="/per_index">个人主页</a></li>
-				<li><a href="/per_personalInfo">账号信息</a></li>
-				<li><a href="/per_aboutus">关于我们</a></li>
-			</ul>
-		</nav><!-- end navigation menu -->
-
-		<div class="footer clearfix">
-			
-			<div class="rights">
-				<p>Copyright © 2018 WeHealth.</p>
-				<p>WeHealth，大健康数据管理平台</p>
-			</div><!-- end rights -->
-		</div ><!-- end footer -->
-	</header><!-- end header -->
-
-
-	
-	<section class="main clearfix">
-
-		<section class="top">	
-			<div class="wrapper content_header clearfix">
-				<div class="work_nav">
-					
-					<ul class="btn clearfix">
-						<li><a href="/per_historyData_bloodPressure" class="previous" data-title="Previous"></a></li>
-						<li><a href="/per_index" class="grid" data-title="Portfolio"></a></li>
-						<li><a href="/per_visitorRecord" class="next" data-title="Next"></a></li>
+		<div class="footer clearfix" >
+			<nav>
+				<ul>
+					<li><a href="/per_index">个人主页</a></li>
+					<li><a href="/per_personalInfo">账号信息</a></li>
+					<li><a href="/per_aboutus">关于我们</a></li>
 					</ul>
-					
-				</div><!-- end work_nav -->
-				<h1 class="title">HealthCoin商店</h1>
-			</div>		
-		</section><!-- end top -->
+					</nav>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<div class="rights">
+						<p>Copyright © 2018 WeHealth.</p>
+						<p>WeHealth，大健康数据管理平台</p>
+					</div><!-- end rights -->
+				</div ><!-- end footer -->
+			</header><!-- end header -->
 
-		<section class="wrapper">
-			<div class="xt-center">
-			<div id="xt-center">
-		  		<div class="Product_top">
-		   			<div class="row content">
-		   				<div class="col-md-9">
-    	    			<div class="row content_bottom">
-			   	   			<div class="col-md-3">
-			   	   			<div class="content_box" ><a href="/per_hcStore">
-			   	   	  			<div class="view view-fifth" border:1px solid #000>
-			   	   	     			<img src="img/p1.jpg" class="img-responsive" alt="">
-				   	   	 			<div class="content_box-grid">
-				   	   	  				<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  				<div class="price">Price:
-											<span class="actual"><input type="text" style="border:none; font-size:16px" id="price" value="12.00"></span>
-						  				</div>
-						  				<ul class="product_but">
-											<li class="but3">
-												<input type="button" id="in" style="border:none" value="Buy" onclick="return dooo()">
-											</li>
-						  					<div class="clearfix"> </div>
-						  				</ul>
-						   				<div class="mask">
-	                         				<div class="info">Quick View</div>
-			               				</div>
-			             			</div>
-				   	   			</div>
-			   	   	   		</a>
-			   	   	  		</div>
-			   	   			</div>
-			   	   			<div class="col-md-3">
-			   	   	  			<div class="content_box"><a href="single.html">
-			   	   	  				<div class="view view-fifth">
-			   	   	     				<img src="img/p4.jpg" class="img-responsive" alt="">
-				   	   	 				<div class="content_box-grid">
-				   	   	  					<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  					<div class="price">Price:
-						    					<span class="actual">$12.00</span>
-						 	 				</div>
-							  				<ul class="product_but">
-												<li class="but3"><a href="/per_hcStore">Buy</a></li>
-							  					<div class="clearfix"> </div>
-							  				</ul>
-							   				<div class="mask">
-		                         				<div class="info">Quick View</div>
-				               				</div>
-				             			</div>
-					   	   			</div>
-			   	   	   			</a>
-			   	   	  			</div>
-			   	   			</div>
-						   	<div class="col-md-3">
-						   	   	<div class="content_box"><a href="single.html">
-						   	   	  	<div class="view view-fifth">
-						   	   	     	<img src="img/p3.jpg" class="img-responsive" alt="">
-							   	   	 	<div class="content_box-grid">
-							   	   	  		<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-							   	   	  		<div class="price">Price:
-									    		<span class="actual">$12.00</span>
-									  		</div>
-									  		<ul class="product_but">
-									  			<li class="but3"><a href="/per_hcStore">Buy</a></li>
-									  			<div class="clearfix"> </div>
-									  		</ul>
-									   		<div class="mask">
-				                         		<div class="info">Quick View</div>
-						               		</div>
-						             	</div>
-							   	   	</div>
-						   	   	</a>
-						   	   	</div>
-						   	</div>
-					   	   	<div class="col-md-3">
-					   	   	   	<div class="content_box"><a href="single.html">
-					   	   	  		<div class="view view-fifth">
-					   	   	     		<img src="img/p2.jpg" class="img-responsive" alt="">
-						   	   	 		<div class="content_box-grid">
-						   	   	  			<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-						   	   	  			<div class="price">Price:
-								    			<span class="actual">$12.00</span>
-								  			</div>
-								  			<ul class="product_but">
-												<li class="but3"><a href="/per_hcStore">Buy</a></li>
-								  				<div class="clearfix"> </div>
-								  			</ul>
-								   			<div class="mask">
-			                         			<div class="info">Quick View</div>
-					               			</div>
-					             		</div>
-						   	   		</div>
-					   	   	   	</a>
-					   	   	  	</div>
-					   	   	</div>
-					   	</div>
 
-				   		<div class="row content_bottom1">
-				   	   		<div class="col-md-3">
-				   	   			<div class="content_box"><a href="single.html">
-				   	   	  			<div class="view view-fifth">
-				   	   	     			<img src="img/p1.jpg" class="img-responsive" alt="">
-					   	   	 			<div class="content_box-grid">
-					   	   	  				<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-					   	   	  				<div class="price">Price:
-							    				<span class="actual">$12.00</span>
-							  				</div>
-							  				<ul class="product_but">
-							  					<li class="but3">Buy</li>
-							  					<div class="clearfix"> </div>
-							  				</ul>
-							   				<div class="mask">
-		                         				<div class="info">Quick View</div>
-				               				</div>
-				             			</div>
-					   	   			</div>
-				   	   	   		</a>
-				   	   	  		</div>
-				   	   		</div>
-				   	   		<div class="col-md-3">
-				   	   	  		<div class="content_box"><a href="single.html">
-				   	   	  			<div class="view view-fifth">
-				   	   	     			<img src="img/p4.jpg" class="img-responsive" alt="">
-					   	   	 			<div class="content_box-grid">
-					   	   	  				<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-					   	   	  				<div class="price">Price:
-							    				<span class="actual">$12.00</span>
-							  				</div>
-							  				<ul class="product_but">
-							  					<li class="but3">Buy</li>
-							  					<div class="clearfix"> </div>
-							  				</ul>
-							   				<div class="mask">
-		                         				<div class="info">Quick View</div>
-				               				</div>
-				             			</div>
-					   	   			</div>
-				   	   	   		</a>
-				   	   	  		</div>
-				   	   		</div>
-				   	   		<div class="col-md-3">
-				   	   	 		<div class="content_box"><a href="single.html">
-				   	   	  			<div class="view view-fifth">
-				   	   	     			<img src="img/p3.jpg" class="img-responsive" alt="">
-					   	   	 			<div class="content_box-grid">
-					   	   	  				<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-					   	   	  				<div class="price">Price:
-							    				<span class="actual">$12.00</span>
-							  				</div>
-							  				<ul class="product_but">
-							  					<li class="but3">Buy</li>
-							  					<div class="clearfix"> </div>
-							  				</ul>
-							   				<div class="mask">
-		                         				<div class="info">Quick View</div>
-				               				</div>
-				             			</div>
-					   	   			</div>
-				   	   	   		</a>
-				   	   	  		</div>
-				   	   		</div>
-					   	   	<div class="col-md-3">
-					   	   	   	<div class="content_box"><a href="single.html">
-					   	   	  		<div class="view view-fifth">
-					   	   	     		<img src="img/p2.jpg" class="img-responsive" alt="">
-						   	   	 		<div class="content_box-grid">
-						   	   	  			<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-						   	   	  			<div class="price">Price:
-								    			<span class="actual">$12.00</span>
-								  			</div>
-								  			<ul class="product_but">
-								  				<li class="but3">Buy</li>
-								  				<div class="clearfix"> </div>
-								  			</ul>
-								   			<div class="mask">
-			                         			<div class="info">Quick View</div>
-					               			</div>
-					             		</div>
-						   	   		</div>
-					   	   	   	</a>
-					   	   	  	</div>
-				   	   		</div>
-			   			</div>
-         				</div>
-	   				</div>
-	  			</div>
-	 			</div>
-			</div>
-		</section>
 
-	</section>
-	
-</body>
-</html>
+			<section class="main clearfix" >
+
+				<section class="top">	
+					<div class="wrapper content_header clearfix">
+						<div class="work_nav">
+
+							<ul class="btn clearfix">
+								<li><a href="/per_historyData_bloodPressure" class="previous" data-title="历史记录"></a></li>
+								<li><a href="/per_index" class="grid" data-title="个人主页"></a></li>
+								<li><a href="/per_visitorRecord" class="next" data-title="来访记录"></a></li>
+							</ul>
+
+						</div><!-- end work_nav -->
+						<h1 class="title">HealthCoin商店</h1>
+					</div>		
+				</section><!-- end top -->
+
+				<section class="wrapper">
+					<div class="xt-center">
+						<div id="xt-center">
+							<div class="Product_top">
+								<div class="row content">
+									<div class="col-md-12" >
+										<div class="row content_bottom">
+
+											<div class="col-md-4">
+												<div class="content_box" >
+													<div class="view view-fifth" >
+														<img src="img/家庭医生.jpg" class="img-responsive" alt="">
+														<div class="content_box-grid">
+															<p class="m_1" id="price1u">家庭医生</p>
+															<div class="price" style="text-align: center;" >价格:
+																<span class="actual" ><input type="text" style="border:none; font-size:20px;width:60px;text-align:center" id="price1" value="25.00" >Health Coins</span>
+																<ul class="product_but" style="text-align: center;">
+																	<a href="#" class="but3" id="price1" onclick="buy(this.id,this.id)">预约</a>
+																	<!--<input type="button" id="in" style="border:none" value="Buy" onclick="return buy()">-->
+																</ul>
+															</div>
+
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="content_box">
+													<div class="view view-fifth">
+														<img src="img/儿童健康咨询.jpg" class="img-responsive" alt="">
+														<div class="content_box-grid">
+															<p class="m_1" id="price2u">儿童健康咨询</p>
+															<div class="price" style="text-align: center;" >价格:
+																<span class="actual"><input type="text" style="border:none; font-size:20px;width:60px;text-align:center" id="price2" value="20.00">Health Coins</span>
+																<ul class="product_but" style="text-align: center;">
+																	<a href="#" class="but3" id="price2" onclick="buy(this.id,this.id)">预约</a>
+																</ul>
+															</div>
+
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="content_box">
+													<div class="view view-fifth">
+														<img src="img/口腔护理.jpg" class="img-responsive" alt="">
+														<div class="content_box-grid">
+															<p class="m_1" id="price3u">口腔护理</p>
+															<div class="price" style="text-align: center;">价格:
+																<span class="actual"><input type="text" style="border:none; font-size:20px;width:60px;text-align:center" id="price3" value="18.00">Health Coins</span>
+															</div>
+															<ul class="product_but" style="text-align: center;">
+																<a href="#" class="but3" id="price3" onclick="buy(this.id,this.id)">预约</a>
+															</ul>
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<div class="row content_bottom1">
+											<div class="col-md-4">
+												<div class="content_box">
+													<div class="view view-fifth">
+														<img src="img/体检.jpg" class="img-responsive" alt="">
+														<div class="content_box-grid">
+															<p class="m_1" id="price4u">全面体检</p>
+															<div class="price" style="text-align: center;">价格:
+																<span class="actual"><input type="text" style="border:none; font-size:20px;width:60px;text-align:center" id="price4" value="15.00">Health Coins</span>
+															</div>
+															<ul class="product_but" style="text-align: center;">
+																<a href="#" class="but3" id="price4" onclick="buy(this.id,this.id)">预约</a>
+															</ul>
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+
+
+											<div class="col-md-4">
+												<div class="content_box">
+													<div class="view view-fifth">
+														<img src="img/专家门诊.jpg" class="img-responsive" alt="">
+														<div class="content_box-grid">
+															<p class="m_1" id="price5u">专家门诊</p>
+															<div class="price" style="text-align: center;">价格:
+																<span class="actual"><input type="text" style="border:none; font-size:20px;width:60px;text-align:center" id="price5" value="10.00">Health Coins</span>
+															</div>
+															<ul class="product_but" style="text-align: center;">
+																<a href="#" class="but3" id="price5" onclick="buy(this.id,this.id)">预约</a>
+															</ul>
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<div class="content_box">
+													<div class="view view-fifth">
+														<img src="img/心理医生.jpg" class="img-responsive" alt="">
+														<div class="content_box-grid">
+															<p class="m_1" id="price6u">心理医生</p>
+															<div class="price"style="text-align: center;">价格:
+																<span class="actual" ><input type="text" style="border:none; font-size:20px;width:60px;text-align:center" id="price6" value="30.00">Health Coins</span>
+															</div>
+															<ul class="product_but" style="text-align: center;">
+																<a href="#" class="but3" id="price6" onclick="buy(this.id,this.id)">预约</a>
+															</ul>
+															
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+
+			</section>
+
+		</body>
+		</html>

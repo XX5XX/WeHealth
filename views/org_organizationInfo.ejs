@@ -11,10 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<link href="css/demo.css" rel="stylesheet" />
-	<link href="css/switchery.min.css" rel="stylesheet" />
-	<link href="http://fonts.googleapis.com/css?family=Istok Web:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	<!--<link href="css/switchery.min.css" rel="stylesheet" />-->
+	<!--<link href="http://fonts.googleapis.com/css?family=Istok Web:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Prosto+One" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>-->
 
 
 
@@ -31,8 +31,8 @@
 	<div id="menu_icon"></div>
 	<nav>
 		<ul>
-			<li><a href="/org_index">个人主页</a></li>
-			<li><a href="/org_personalInfo" class="selected">账号信息</a></li>
+			<li><a href="/org_index">主页</a></li>
+			<li><a href="/org_organizationInfo" class="selected">账号信息</a></li>
 			<li><a href="/org_aboutus">关于我们</a></li>
 		</ul>
 	</nav><!-- end navigation menu -->
@@ -59,7 +59,7 @@
 			<h2>WeHealth账号</h2>
 
 			<br />
-			<h4 align="center"><img src="?" id="photo" height="100px" title="WeHealth" alt="WeHealth" /></h4>
+			<h4 align="center"><img src="?" id="photo" height="70px" title="WeHealth" alt="WeHealth" /></h4>
 			<h4 align="center"><input type="text" id="name" name="input1" value="" readonly style="font-size: 24px; text-align: center;border:none;font-weight: 600;"></h4>
 
 			<hr />
@@ -73,9 +73,9 @@
 			<h2>区块链账号</h2>
 
 			<br />
-			<h4 align="center">地&emsp;址&emsp;<input type="text" id="addr" name="input3" value="0xxxxxxxxxxxxxx" readonly  style="font-size: 20px;width:300px;"></h4>
-			<h4 align="center">私&emsp;钥&emsp;<input type="text" id="privateKey" name="input1" value="***************" readonly  style="font-size: 20px;width:300px;"></h4>
-			<h4 align="center">公&emsp;钥&emsp;<input type="text" id="publicKey" name="input2" value="1.00" readonly  style="font-size: 20px;width:300px;"></h4>
+			<h4 align="center">地&emsp;址&emsp;<input type="text" id="addr" name="input3" value="0xxxxxxxxxxxxxx" readonly  style="border:none;font-size: 20px;width:300px;"></h4>
+			<h4 align="center">余&emsp;额&emsp;<input type="text" id="money" name="input3" value="0xxxxxxxxxxxxxx" readonly  style="border:none;font-size: 20px;width:300px;"></h4>
+
 
 			<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
 
@@ -101,9 +101,8 @@
             success: function (data) {
                 document.images.photo.src=data.orgphotopath;
                 document.getElementById("name").value=data.orgName;
-                document.getElementById("addr").value=data.address;
-                document.getElementById("publicKey").value=data.publickey;
-                document.getElementById("privateKey").value=data.privatekey;
+                document.getElementById("addr").value=data.orgAddress;
+                document.getElementById("money").value=data.orgHc;
             },
             error: function () {
                 alert('错误！')

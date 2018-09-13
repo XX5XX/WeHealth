@@ -12,6 +12,12 @@ router.post('/',function (req,res,next) {
     });
     sql = "update userInfo set authorization ="+"'"+req.body.isAuthor+"'"+" where userName = " + "'" + req.cookies.Name + "'";
     base.query(sql, function (err, resu) {
+    });
+    sql = "update userInfo set height ="+"'"+req.body.height+"'"+" where userName = " + "'" + req.cookies.Name + "'";
+    base.query(sql, function (err, resu) {
+    });
+    sql = "update userInfo set weight ="+"'"+req.body.weight+"'"+" where userName = " + "'" + req.cookies.Name + "'";
+    base.query(sql, function (err, resu) {
         res.send(true)
     });
 });

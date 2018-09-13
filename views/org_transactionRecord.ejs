@@ -18,14 +18,14 @@
 <body>
 <header>
     <div class="logo">
-        <a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+        <a href="/org_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
     </div><!-- end logo -->
 
     <div id="menu_icon"></div>
     <nav>
         <ul>
             <li><a href="/org_index">主页</a></li>
-            <li><a href="/org_personalInfo">账号信息</a></li>
+            <li><a href="/org_organizationInfo">账号信息</a></li>
             <li><a href="/org_aboutus">关于我们</a></li>
         </ul>
     </nav><!-- end navigation menu -->
@@ -66,7 +66,7 @@
             <div id="xt-center">
 
                 <div class="xt-fenye">
-                    <div class="xt-fenye-left">当前第 1 / 123 页,每页10条，共 1230条记录</div>
+                    <div class="xt-fenye-left">当前第 1 / 1 页,每页10条</div>
                     <div class="xt-fenye-right">
                         <a href="#">首页</a>
                         <a href="#">上一页</a>
@@ -106,7 +106,7 @@
                                     str += '<tr height="25px" class="xt-table" align="center">'
                                     str += '<td>' + obj.orgId + '</td>';
                                     str += '<td>' + obj.orgName + '</td>';
-                                    str += '<td>' + obj.date + '</td>';
+                                    str += '<td>' + obj.orgdate + '</td>';
                                     str += '<td>' + obj.amount + '</td>';
                                     str += '<td>' + obj.payCounts + '</td>';
                                     str += '</tr>'

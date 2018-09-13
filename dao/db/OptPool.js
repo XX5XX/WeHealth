@@ -6,7 +6,7 @@ function OptPool(){
         user:'root',
         password:'Zyhojbk..',
         database:'x5x',
-        port:'3306'
+        port:'3305'
     });
     this.getPool=function(){
         if(this.flag){

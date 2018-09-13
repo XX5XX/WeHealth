@@ -6,7 +6,7 @@ let util = require("util");
 let uuidv1 = require('uuid/v1');
 let path = require("path");
 let fs = require("fs");
-
+let utils = require('../web3_interface/utils');
 
 router.post('/', function(req, res, next) {
 
@@ -33,10 +33,10 @@ router.post('/', function(req, res, next) {
         // 3.4 改名
         let oldphoto=dirname+"/"+files.orgphoto.path;
         let newphoto = dirname + "/public/org_photo/" + name + extName;
-        let photopath = "org_photo"+"/"+name+extName;
+        let photopath = "org_photo"+"/"+name+extName2;
         fs.rename(oldphoto,newphoto,(err)=>{
             if(!err){
-                res.send("2")
+               // res.send("2")
             }else {
                 throw err;
             }
@@ -46,9 +46,11 @@ router.post('/', function(req, res, next) {
                 sql="select orgName from orgInfo where orgName = "+"'"+orgaName+"'";
                 base.query(sql,function (err,rs) {
                     if(null === rs[0] || undefined === rs[0]){ // 没有注册
-                        sql="insert into orgInfo(orgName,orgPassword,) values("+"'"+orgaName+"',"+"'"+loginPwd+"',"+"'"+photopath+"',"+")";
-                        base.query(sql,function (err,rs) {
-                            console.log("注册成功");
+                        utils.web3.eth.personal.newAccount(loginPwd).then(function (add) {
+                            sql="insert into orgInfo(orgName,orgPassword,orgphotopath,orgValidation,orgHc,orgAddress,uploadAmount,downloadAmount) values("+"'"+orgaName+"',"+"'"+loginPwd+"',"+"'"+photopath+"',"+"2040.5,"+"100,"+"'"+add+"',"+"'0', '0'"+")";
+                            base.query(sql, function (err, rs) {
+                                console.log("注册成功");
+                            });
                             res.redirect('/login');
                         })
                     }else {

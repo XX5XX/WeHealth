@@ -19,7 +19,7 @@
 
 	<header>
 		<div class="logo">
-			<a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/org_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
@@ -45,7 +45,7 @@
 					<div class="work_nav">
 						
 						<ul class="btn clearfix">
-							<li><a href="/org_myDevice" class="previous" data-title="我的设备"></a></li>
+							<li><a href="/org_transactionRecord" class="previous" data-title="我的设备"></a></li>
 							<li><a href="/org_index" class="grid" data-title="个人主页"></a></li>
 						</ul>							
 						
@@ -89,7 +89,7 @@
                             function orgOrderTable() {
                                 $.ajax({
                                     type: 'post',
-                                    url: '/per_myOrder',
+                                    url: '/org_myOrder',
                                     success: function (jsonData) {
                                         var str = '<table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">';
                                         str += '<tr height="25px" class="xt-table">'

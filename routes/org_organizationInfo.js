@@ -3,7 +3,9 @@ let router = express.Router({});
 let base = require('../dao/db/query');
 
 router.get('/', function(req, res, next) {
-    res.render('org_organizationInfo',{title:'Express'});
+    if(req.cookies.Name!==undefined) {
+        res.render('org_organizationInfo', {title: 'Express'});
+    }else res.send("请先登录")
 });
 router.post('/',function (req,res,next) {
     sql = "select * from orgInfo where orgName = " + "'" + req.cookies.Name + "'";

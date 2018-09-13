@@ -18,8 +18,8 @@
                 url: '/org_index',
                 success: function (data) {
                     document.getElementById("name").value=data.orgName;
-                    // document.getElementById("upload").value=data.orgName;
-                    // document.getElementById("download").value=data.orgName;
+                    document.getElementById("upload").value=data.uploadAmount;
+                    document.getElementById("download").value=data.downloadAmount;
                 },
                 error: function () {
                     alert('错误！')

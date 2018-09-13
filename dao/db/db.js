@@ -18,6 +18,6 @@ let connection = mysql.createConnection({
     database : 'x5x'
 });
 
-connection.connect();
+//connection.connect();
 //查询数据：
 module.exports=connection;

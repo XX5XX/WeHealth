@@ -21,8 +21,8 @@
 	<link rel="stylesheet" href="css/matrix-style.css" />
 	<link rel="stylesheet" href="css/matrix-media.css" />
 	<link rel="stylesheet" href="css/bootstrap-wysihtml5.css" />
-	<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	<!--<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>-->
 
 	<style type="text/css">
 
@@ -36,7 +36,7 @@
 
 	<script type="text/javascript">
 		function handleData() {
-		    var sex=document.getElementById("sex").value;
+		    var sex=$('input:radio[name="gender"]:checked').val();
 		    var hr=document.getElementById("hr").checked;
 		    var bp=document.getElementById("bp").checked;
 		    var sq=document.getElementById("sq").checked;
@@ -66,7 +66,7 @@
 
 	<header>
 		<div class="logo">
-			<a href="org_index.ejs"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
+			<a href="/org_index"><img src="img/logo1text.png" height="52px" title="WeHealth" alt="WeHealth" /></a>
 		</div><!-- end logo -->
 
 		<div id="menu_icon"></div>
@@ -93,9 +93,9 @@
 				<div class="work_nav">
 							
 					<ul class="btn clearfix">
-						<li><a href="org_uploadData.ejs" class="previous" data-title="数据上传"></a></li>
-						<li><a href="org_index.ejs" class="grid" data-title="主页"></a></li>
-						<li><a href="org_hcStore.ejs" class="next" data-title="HC店铺"></a></li>
+						<li><a href="/org_uploadData" class="previous" data-title="数据上传"></a></li>
+						<li><a href="/org_index" class="grid" data-title="主页"></a></li>
+						<li><a href="/org_hcStore" class="next" data-title="HC店铺"></a></li>
 					</ul>							
 					
 				</div><!-- end work_nav -->
@@ -116,8 +116,8 @@
 						<br>
 		                <label class="box1">性别 :</label>
 		                <div class="box2">
-		                	<input type="radio" name="gender" value="男" id="sex" >男
-		                	<input type="radio" name="gender" value="女" id="sex" >女
+		                	<input type="radio" name="gender" value="男" id="sex1" >男
+		                	<input type="radio" name="gender" value="女" id="sex2" >女
 		                </div>
 		            </div>
 					<br>
@@ -165,7 +165,7 @@
 		</section>
 	</section><!-- end main -->
 
-<script src="js/jquery.min.js"></script> 
+<!--<script src="js/jquery.min.js"></script>
 <script src="js/jquery.ui.custom.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/bootstrap-colorpicker.js"></script> 
@@ -181,7 +181,7 @@
 <script src="js/bootstrap-wysihtml5.js"></script> 
 <script>
 	$('.textarea_editor').wysihtml5();
-</script>
+</script>-->
 
 </body>
 </html>

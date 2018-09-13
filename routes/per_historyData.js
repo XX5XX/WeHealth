@@ -3,7 +3,9 @@ let router = express.Router({});
 
 
 router.get('/', function(req, res, next) {
-    res.render('per_historyData',{title:'Express'});
+    if(req.cookies.Name!==undefined) {
+        res.render('per_historyData', {title: 'Express'});
+    }else res.send("请先登录")
 });
 
 module.exports = router;
